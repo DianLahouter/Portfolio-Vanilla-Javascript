@@ -1,0 +1,97 @@
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: #d3ffff;
+    background-image: radial-gradient(circle at center, #a8e6e6, #d3ffff); /* Radial gradient */
+}
+
+#monitorWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden; 
+    position: relative;
+}
+
+#monitorImg {
+    height: 90vh;
+    object-fit: cover;
+    position:absolute;
+}
+
+#monitorScreen {
+    height: 63%; 
+    margin-right: 10px;
+    background-color: white; 
+    position: absolute;
+    top: 15%;
+    animation: pulse 2s infinite alternate ease-in-out; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.4); 
+    }
+    100% {
+        box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.7); 
+    }
+}
+
+#myName{
+    font-size: 10vh;
+}
+
+#myTitle{
+    font-size: 5vh;
+    margin: 0;
+    text-align: center;
+}
+
+#startDate{
+    text-align: start;
+    font-size: 1.2vh;
+    font-size: 1.5vh;
+}
+
+#email{
+    align-self: end;
+    padding-right: 1vh;
+    font-size: 1.5vh;
+}
+
+#clickForMoreButton {
+    font-size: 2vh;
+    padding: 1.3vh;
+    border-radius: 20px;
+    background-color: #ACD7D7;
+    box-shadow: 7px 9px 0px -3px rgba(38,37,37,0.62);
+    -webkit-box-shadow: 7px 9px 0px -3px rgba(38,37,37,0.62);
+    -moz-box-shadow: 7px 9px 0px -3px rgba(38,37,37,0.62);
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.15s, transform 0.15s; /* Add transform transition */
+}
+
+#clickForMoreButton:hover {
+    box-shadow: -2px 22px 0px -3px rgba(38,37,37,0.8);
+    -webkit-box-shadow: -2px 22px 0px -3px rgba(38,37,37,0.8);
+    -moz-box-shadow: -2px 22px 0px -3px rgba(38,37,37,0.8);
+    transform: translate(0px, -6px); /* Apply a translation */
+    cursor: pointer;
+}
+
+
+#clickForMoreButtonText{
+    font-family: Joystix;
+}
+
+#clickIcon{
+    height: 6vh;
+}

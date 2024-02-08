@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Joystix";
+    src: url("../fonts/joystix.otf");
+}
+
+@font-face {
+    font-family: "SourceCodePro";
+    src: url("../fonts/SourceCodePro.ttf");
+}
+
+h{
+    font-family: Joystix;
+    color: #313131;
+}
+
+p, button, input, span{
+    font-family: SourceCodePro;
+    color: #313131;
+}

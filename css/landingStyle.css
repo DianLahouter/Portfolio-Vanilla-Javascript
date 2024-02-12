@@ -3,7 +3,7 @@ body {
     width: 100%;
     margin: 0;
     background-color: #d3ffff;
-    background-image: radial-gradient(circle at center, #a8e6e6, #d3ffff); /* Radial gradient */
+    background-image: linear-gradient(90deg, #94d5d5, #9ed1d1);
 }
 
 #monitorWrapper {
@@ -32,19 +32,19 @@ body {
     background-image: radial-gradient(circle at center, rgb(255, 255, 255), rgb(239, 239, 239));
     position: absolute;
     top: 15%;
-    animation: pulse 1s infinite alternate ease-in-out; 
+    animation: screenPulse 1.8s infinite alternate ease-in-out; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-@keyframes pulse {
+@keyframes screenPulse {
     0% {
-        box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.7); 
+        box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.7); 
     }
     100% {
-        box-shadow: 0 0 40px 40px rgba(255, 255, 255, 0.8); 
+        box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.8); 
     }
 }
 
@@ -90,22 +90,22 @@ body {
 #clickForMoreButton {
     font-size: 2vh;
     padding: 1.3vh;
-    border-radius: 20px;
+    border-radius:2vh;
     background-color: #ACD7D7;
-    box-shadow: 2px 15px 0px -3px rgba(38,37,37,0.4);
-    -webkit-box-shadow: 2px 15px 0px -3px rgba(38,37,37,0.4);
-    -moz-box-shadow: 2px 15px 0px -3px rgba(38,37,37,0.4);
+    box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); /* Adjusted for better scaling */
+    -webkit-box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); /* Adjusted for better scaling */
+    -moz-box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); /* Adjusted for better scaling */
     display: flex;
     align-items: center;
     transition: box-shadow 0.15s, transform 0.15s, background-color 0.4s; /* Add transform transition */
 }
 
 #clickForMoreButton:hover {
-    transform: translate(0px, 4px); /* Apply a translation */
-    box-shadow: 0px 9px 0px -3px rgba(38,37,37,0.62);
-    -webkit-box-shadow: 0px 9px 0px -3px rgba(38,37,37,0.62);
-    -moz-box-shadow: 0px 9px 0px -3px rgba(38,37,37,0.62);
-    background-color: #72b0b0;
+    transform: translate(0px, 0.2vh); /* Adjusted for better scaling */
+    box-shadow: 0px 0.5625vh 0px -0.225vh rgba(38,37,37,0.62); /* Adjusted for better scaling */
+    -webkit-box-shadow: 0px 0.5625vh 0px -0.225vh rgba(38,37,37,0.62); /* Adjusted for better scaling */
+    -moz-box-shadow: 0px 0.5625vh 0px -0.225vh rgba(38,37,37,0.62); /* Adjusted for better scaling */
+    background-color: #84cbcb;
     cursor: pointer;
 }
 
@@ -117,3 +117,21 @@ body {
 #clickIcon{
     height: 6vh;
 }
+
+@keyframes moveDown {
+    from {
+      transform: translateY(0vh);
+    }
+    to {
+      transform: translateY(110vh);
+    }
+}
+
+
+.binaryNumber{
+    position:fixed;
+    height: 3.5vh;
+    animation: moveDown 3.7s linear forwards;
+}
+
+  

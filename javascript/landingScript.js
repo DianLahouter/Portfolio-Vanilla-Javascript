@@ -54,7 +54,7 @@ function deleteBinaryNumber(binaryNumber) {
 }
 
 function spawnBinaryNumbers() {
-    var totalLanes = 12;
+    var totalLanes = 13;
     var spawnPoint = 0;
     var img = document.createElement('img');
 
@@ -95,7 +95,7 @@ function spawnBinaryNumbers() {
     deleteBinaryNumber(img);
     occupyLane(randomSegment);
 
-    var randomDelay = Math.random() * 60 + 30;
+    var randomDelay = Math.random() * 40 + 20;
     setTimeout(spawnBinaryNumbers, randomDelay);
 }
 

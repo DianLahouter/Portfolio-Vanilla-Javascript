@@ -1,6 +1,8 @@
 var matrixLanes = [];
+var aboutMeHeading = document.getElementById("aboutMeHeading");
 
-spawnBinaryNumbers();
+//spawnBinaryNumbers();
+flickerRandomLetter(aboutMeHeading);
 
 function deleteBinaryNumber(binaryNumber) {
     setTimeout(function() {
@@ -64,4 +66,32 @@ function occupyLane(index){
 
 function unOccupyLane(index){
     matrixLanes[index] = 0;
+}
+
+
+function flickerRandomLetter(wordElement){
+    var cleanWordElement = wordElement.innerHTML;
+    let textContent = wordElement.textContent;
+    let randomLetterIndex;
+    do {
+        randomLetterIndex = Math.floor(Math.random() * textContent.length);
+    } while (randomLetterIndex === 4);
+    
+
+    textContent = textContent.substring(0, randomLetterIndex) + '<span class="letterGlitch">' + textContent[randomLetterIndex] + '</span>' + textContent.substring(randomLetterIndex+1);
+
+    wordElement.innerHTML = textContent;
+
+    setTimeout(function() {
+        flickerRandomLetter(wordElement); 
+    }, Math.random() * (2000 - 1500) + 1500);
+
+    setTimeout(function() {
+        turnLettersBackOn(wordElement,cleanWordElement); 
+    }, Math.random() * (300 - 50) + 50);
+}
+
+
+function turnLettersBackOn(wordElement, cleanInnerHtml){
+    wordElement.innerHTML = cleanInnerHtml;
 }

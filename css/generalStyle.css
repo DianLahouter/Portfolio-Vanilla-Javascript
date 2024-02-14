@@ -13,7 +13,7 @@ h, h span{
     color: #313131;
 }
 
-p, button, input, span{
+p, button, input, span, body{
     font-family: SourceCodePro;
     color: #313131;
 }

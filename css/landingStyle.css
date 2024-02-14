@@ -9,7 +9,7 @@
 }
 
 #monitorImg {
-    height: 90vh;
+    height: 75vh;
     object-fit: cover;
     position:absolute;
 }
@@ -19,7 +19,8 @@
 }
 
 #monitorScreen {
-    height: 63%; 
+    margin-top: 14vh;
+    height: 53%; 
     margin-right: 10px;
     background-image: radial-gradient(circle at center, rgb(255, 255, 255), rgb(239, 239, 239));
     position: absolute;
@@ -55,14 +56,14 @@
 
 
 #myName{
-    font-size: 10vh;
+    font-size: 8vh;
 }
 
 #myTitle{
     font-size: 5vh;
     margin: 0;
     text-align: center;
-    color: #243246;
+    color: #467f80;
 }
 
 #startDate{
@@ -84,9 +85,9 @@
     padding: 1.3vh;
     border-radius:2vh;
     background-color: #ACD7D7;
-    box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); /* Adjusted for better scaling */
-    -webkit-box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); /* Adjusted for better scaling */
-    -moz-box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); /* Adjusted for better scaling */
+    box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); 
+    -webkit-box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4); 
+    -moz-box-shadow: 0.15vh 1.125vh 0px -0.225vh rgba(38,37,37,0.4);
     display: flex;
     align-items: center;
     transition: box-shadow 0.15s, transform 0.15s, background-color 0.4s; /* Add transform transition */

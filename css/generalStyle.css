@@ -17,3 +17,27 @@ p, button, input, span{
     font-family: SourceCodePro;
     color: #313131;
 }
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: #d3ffff;
+    background-image: linear-gradient(90deg, #94d5d5, #9ed1d1);
+}
+
+@keyframes moveDown {
+    from {
+      transform: translateY(-10vh);
+    }
+    to {
+      transform: translateY(110vh);
+    }
+}
+
+
+.binaryNumber{
+    position:fixed;
+    height: 3.5vh;
+    animation: moveDown 3.7s linear forwards;
+}

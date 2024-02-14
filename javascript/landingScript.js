@@ -4,6 +4,7 @@ var myName = document.getElementById("myName");
 var myTitle = document.getElementById("myTitle");
 var binaryNumbers = document.getElementsByClassName("binaryNumber");
 var matrixLanes = [];
+var startButton = document.getElementById("clickForMoreButton");
 
 changeScreenSize();
 
@@ -11,6 +12,10 @@ function changeScreenSize() {
     const newWidth = parseFloat(getComputedStyle(monitorImg).width) * 0.9;
     monitorScreen.style.width = `${newWidth}px`;
 }
+
+startButton.addEventListener('mouseup', function(event) {
+    window.location.href = "./Main_Page.html";
+});
 
 const observer = new ResizeObserver(changeScreenSize);
 observer.observe(monitorImg);

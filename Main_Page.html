@@ -9,7 +9,28 @@
     <title>Dian Lahouter</title>
 </head>
 <body id="mainPageBody">
-    <script src="javascript/mainPageScript.js" defer></script>
+    <div id="transitionObjects">
+        <div id="leftTransitionObject"></div>
+        <div id="rightTransitionObject"></div>
+    </div>
+
+    <div id="logoutButton" class="button">
+        <p id="logooutButtonText" class="buttonText">Log Out</p><!-- <img id="clickIcon" src="images/landing/clickIcon.png"/> -->
+    </div>
+
+    <div id="circuitNodes">
+        <div id="circuitNode1"></div>
+            <div id="wire1" class="wire"></div>
+            <div id="node1" class="node"></div>
+        <div id="circuitNode2">
+            <div id="wire2" class="wire"></div>
+            <div id="node2" class="node"></div>
+        </div>
+        <div id="circuitNode3">
+            <div id="wire3" class="wire"></div>
+            <div id="node3" class="node"></div>
+        </div>
+    </div>
 
     <div id="aboutMeSection" class="mainPageSection">
 
@@ -83,5 +104,7 @@
     <div id="skillSection" class="mainPageSection currentlyHidden">
 
     </div>
+
+    <script src="javascript/mainPageScript.js" defer></script>
 </body>
 </html>

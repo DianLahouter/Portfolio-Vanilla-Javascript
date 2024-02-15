@@ -1,5 +1,6 @@
 var matrixLanes = [];
 var aboutMeHeading = document.getElementById("aboutMeHeading");
+var logoutButton = document.getElementById("logoutButton");
 
 //spawnBinaryNumbers();
 flickerRandomLetter(aboutMeHeading);
@@ -10,8 +11,20 @@ function deleteBinaryNumber(binaryNumber) {
     }, 4000); 
 }
 
+logoutButton.addEventListener('mouseup', function(event) {
+    setTimeout(() => {
+        window.location.href = "./Landing.html";
+    }, 330);
+
+    var element = document.getElementById('rightTransitionObject');
+    element.style.animation = 'closeLeft 0.3s ease-out forwards';
+
+    var element = document.getElementById('leftTransitionObject');
+    element.style.animation = 'closeRight 0.3s ease-out forwards';
+});
+
 function spawnBinaryNumbers() {
-    var totalLanes = 8;
+    var totalLanes = 14;
     var spawnPoint = 0;
     var img = document.createElement('img');
 
@@ -46,13 +59,13 @@ function spawnBinaryNumbers() {
     }
 
     img.style.left = spawnPoint + 'px';
-    img.classList.add('binaryNumber');
+    img.classList.add('binaryNumberMainPage');
     document.body.insertBefore(img, document.body.firstChild);
 
     deleteBinaryNumber(img);
     occupyLane(randomSegment);
 
-    var randomDelay = Math.random() * 40 + 15;
+    var randomDelay = Math.random() * 30 + 25;
     setTimeout(spawnBinaryNumbers, randomDelay);
 }
 
@@ -84,11 +97,11 @@ function flickerRandomLetter(wordElement){
 
     setTimeout(function() {
         flickerRandomLetter(wordElement); 
-    }, Math.random() * (2000 - 1500) + 1500);
+    }, Math.random() * (1800 - 1000) + 1000);
 
     setTimeout(function() {
         turnLettersBackOn(wordElement,cleanWordElement); 
-    }, Math.random() * (300 - 50) + 50);
+    }, Math.random() * (700 - 50) + 50);
 }
 
 

@@ -14,7 +14,15 @@ function changeScreenSize() {
 }
 
 startButton.addEventListener('mouseup', function(event) {
-    window.location.href = "./Main_Page.html";
+    setTimeout(() => {
+        window.location.href = "./Main_Page.html";
+    }, 330);
+
+    var element = document.getElementById('rightTransitionObject');
+    element.style.animation = 'closeLeft 0.3s ease-out forwards';
+
+    var element = document.getElementById('leftTransitionObject');
+    element.style.animation = 'closeRight 0.3s ease-out forwards';
 });
 
 const observer = new ResizeObserver(changeScreenSize);
@@ -115,6 +123,9 @@ function occupyLane(index){
 function unOccupyLane(index){
     matrixLanes[index] = 0;
 }
+
+
+
 
 
 

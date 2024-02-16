@@ -89,6 +89,61 @@ body::-webkit-scrollbar-thumb {
     left:2vh;
 }
 
+
+.wire {
+    width: 1vw;
+    height: 40vh;
+    border: 0.3vw solid #D3FFFF;
+    border-bottom: none;
+
+}
+
+.node {
+    width: 5vw;
+    height: 5vw;
+    border: 0.3vw solid #D3FFFF; 
+    border-radius: 100%;
+}
+
+.nodeAndWire{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circuitNodesGroup{
+    display: flex;
+    justify-content: space-between;
+}
+
+#circuitNodesGroup1{
+    position: fixed;
+    bottom: -0.3vh;
+    right: 13vh;
+    width: 20vw;
+}
+
+#wire1{
+    height: 65vh;
+}
+
+#wire2{
+    height: 44vh;
+}
+
+#circuitNode2{
+    position: absolute;
+    right:22vw;
+    bottom: -1vh;
+}
+
+#circuitNode3{
+    position: absolute;
+    left:10vw;
+    bottom: -1vh;
+}
+
 /* ------------------------GENERAL-------------------------------- */
 
 

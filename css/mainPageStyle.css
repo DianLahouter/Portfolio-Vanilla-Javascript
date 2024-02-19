@@ -87,6 +87,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     bottom:2vh;
     left:2vh;
+    height: 3vh;
 }
 
 
@@ -95,7 +96,19 @@ body::-webkit-scrollbar-thumb {
     height: 40vh;
     border: 0.3vw solid #D3FFFF;
     border-bottom: none;
+    border-top-left-radius:30px; 
+    border-top-right-radius: 30px;
+    animation: growWireGeneral 0.8s ease forwards; 
+}
 
+
+@keyframes growWireGeneral {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 40vh;
+    }
 }
 
 .node {
@@ -103,6 +116,9 @@ body::-webkit-scrollbar-thumb {
     height: 5vw;
     border: 0.3vw solid #D3FFFF; 
     border-radius: 100%;
+    animation: popIn 0.15s ease-out forwards; 
+    animation-delay: 0.6s;
+    transform: scale(0); 
 }
 
 .nodeAndWire{
@@ -124,13 +140,44 @@ body::-webkit-scrollbar-thumb {
     width: 20vw;
 }
 
-#wire1{
-    height: 65vh;
+#circuitNodesGroup2{
+    position: fixed;
+    top: -12.3vh;
+    left: -35vh;
+    width: 50vw;
+    transform: rotate(180deg);
 }
+
+#wire1{
+    height: 62vh;
+    animation: growWire1 0.8s ease-out forwards; 
+}
+
+@keyframes growWire1 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 62vh;
+    }
+}
+
 
 #wire2{
     height: 44vh;
+    animation: growWire2 0.8s ease-out forwards; 
 }
+
+@keyframes growWire2 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 44vh;
+    }
+}
+
+
 
 #circuitNode2{
     position: absolute;
@@ -184,6 +231,22 @@ body::-webkit-scrollbar-thumb {
     font-size: calc(0.8vw + 0.8vh);
     z-index: 1;
     transform: scale(0); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutMeIcons{
+    height: 3vh;
+    padding: 0.2vh;
+    padding-right: 0.5vw;
+}
+
+#valuesIcon{
+    height: 2.7vh;
+    margin-bottom: 0.5vh;
+    padding: 0;
+    padding-right: 0.5vw;
 }
 
 @keyframes popIn {

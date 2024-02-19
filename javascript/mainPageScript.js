@@ -108,3 +108,41 @@ function flickerRandomLetter(wordElement){
 function turnLettersBackOn(wordElement, cleanInnerHtml){
     wordElement.innerHTML = cleanInnerHtml;
 }
+
+
+// setTimeout(function() {
+//     var prevScrollY = window.scrollY;
+
+//     window.addEventListener('scroll', function() {
+//         var scrolled = window.scrollY;
+//         var scrollDirection = scrolled > prevScrollY ? 'down' : 'up';
+
+//         var wire1 = document.getElementById('wire1');
+//         var wire2 = document.getElementById('wire2');
+//         var wire3 = document.getElementById('wire3');
+
+//         console.log(wire1.clientHeight);
+
+//         // Calculate the scaling factors based on the scroll direction
+//         var scalingFactor1 = Math.abs(scrolled - prevScrollY) * 2.8; // Adjust the coefficient as needed
+//         var scalingFactor2 = Math.abs(scrolled - prevScrollY) * 2.5; // Adjust the coefficient as needed
+//         var scalingFactor3 = Math.abs(scrolled - prevScrollY) * 2.2; // Adjust the coefficient as needed
+
+//         // Update the height based on the scaling factors and scroll direction
+//         if (scrollDirection === 'down') {
+//             wire1.style.height = Math.max(wire1.clientHeight - scalingFactor1, 0) + 'px';
+//             wire2.style.height = Math.max(wire2.clientHeight - scalingFactor2, 0) + 'px';
+//             wire3.style.height = Math.max(wire3.clientHeight - scalingFactor3, 0) + 'px';
+//         } else if (scrollDirection === 'up') {
+//             var maxViewportHeight = window.innerHeight;
+//             wire1.style.height = Math.min(wire1.clientHeight + scalingFactor1, maxViewportHeight) + 'px';
+//             wire2.style.height = Math.min(wire2.clientHeight + scalingFactor2, maxViewportHeight) + 'px';
+//             wire3.style.height = Math.min(wire3.clientHeight + scalingFactor3, maxViewportHeight) + 'px';
+//         }
+
+//         prevScrollY = scrolled;
+//     });
+// }, 0);
+
+
+

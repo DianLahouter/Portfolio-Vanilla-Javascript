@@ -234,6 +234,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: center;
+    height:2vh;
 }
 
 .aboutMeIcons{
@@ -259,12 +260,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-#aboutMeOverview{
-    top:7vh;
-    left:50%;
-    animation: popIn 0.05s ease forwards; 
+#aboutMeOverview {
+    top: 7vh;
+    left: 50%;
+    animation: popIn 0.05s ease forwards;
     animation-delay: 1.4s;
+    transition: height 0.2s, width 0.15s ease-out, left 0.15s ease-out;
+    transition-delay: 0.15s,0s,0s;
 }
+
+#aboutMeOverview:hover {
+    width: 20vw;
+    left: 45%;
+    height: 40vh;
+    z-index: 3;
+}
+
 
 #aboutMeGoals{
     top:35vh;

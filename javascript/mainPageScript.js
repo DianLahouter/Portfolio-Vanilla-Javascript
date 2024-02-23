@@ -110,39 +110,67 @@ function turnLettersBackOn(wordElement, cleanInnerHtml){
 }
 
 
-// setTimeout(function() {
-//     var prevScrollY = window.scrollY;
+var elements = document.getElementsByClassName("aboutMeDescription");
 
-//     window.addEventListener('scroll', function() {
-//         var scrolled = window.scrollY;
-//         var scrollDirection = scrolled > prevScrollY ? 'down' : 'up';
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("mouseover", showDescriptionText);
+    elements[i].addEventListener("mouseout", hideDescriptionText);
+}
 
-//         var wire1 = document.getElementById('wire1');
-//         var wire2 = document.getElementById('wire2');
-//         var wire3 = document.getElementById('wire3');
+function showDescriptionText(event) {
+    var totalLettersAtAtime = 3;
+    var hoveredOverELement = event.currentTarget;
+    var descriptionText = hoveredOverELement.querySelector(".descriptionTextStorage").textContent;
+    var descriptionElement = hoveredOverELement.querySelector(".descriptionText");
 
-//         console.log(wire1.clientHeight);
+    if (window.getComputedStyle(descriptionElement).getPropertyValue('display') === "none"){
+        var paragraphIndex = 0;
 
-//         // Calculate the scaling factors based on the scroll direction
-//         var scalingFactor1 = Math.abs(scrolled - prevScrollY) * 2.8; // Adjust the coefficient as needed
-//         var scalingFactor2 = Math.abs(scrolled - prevScrollY) * 2.5; // Adjust the coefficient as needed
-//         var scalingFactor3 = Math.abs(scrolled - prevScrollY) * 2.2; // Adjust the coefficient as needed
+        descriptionElement.style.display = "block"
+    
+        function writeParagraph() {
+            for(var i = 0 ; i < totalLettersAtAtime ; i++){
+                if(descriptionText.length >= paragraphIndex)
+                    descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
+    
+                paragraphIndex++;
+            }
+        
+            if (paragraphIndex < descriptionText.length) {
+              setTimeout(writeParagraph, 0.09); 
+            }
+          }
+        
+          writeParagraph();
+    }
+}
 
-//         // Update the height based on the scaling factors and scroll direction
-//         if (scrollDirection === 'down') {
-//             wire1.style.height = Math.max(wire1.clientHeight - scalingFactor1, 0) + 'px';
-//             wire2.style.height = Math.max(wire2.clientHeight - scalingFactor2, 0) + 'px';
-//             wire3.style.height = Math.max(wire3.clientHeight - scalingFactor3, 0) + 'px';
-//         } else if (scrollDirection === 'up') {
-//             var maxViewportHeight = window.innerHeight;
-//             wire1.style.height = Math.min(wire1.clientHeight + scalingFactor1, maxViewportHeight) + 'px';
-//             wire2.style.height = Math.min(wire2.clientHeight + scalingFactor2, maxViewportHeight) + 'px';
-//             wire3.style.height = Math.min(wire3.clientHeight + scalingFactor3, maxViewportHeight) + 'px';
-//         }
+function hideDescriptionText(event) {
+    var totalLettersAtAtime = 8;
+    var hoveredOverELement = event.currentTarget;
+    var currentDescriptionText = hoveredOverELement.querySelector(".descriptionText").textContent;
+    var descriptionElement = hoveredOverELement.querySelector(".descriptionText");
 
-//         prevScrollY = scrolled;
-//     });
-// }, 0);
+    if (window.getComputedStyle(descriptionElement).getPropertyValue('display') === "block"){
+        console.log("hererrr");
+        var paragraphIndex = currentDescriptionText.length;
 
-
-
+        function deleteParagraph() {
+            for(var i = 0 ; i < totalLettersAtAtime ; i++){
+                if(paragraphIndex >= 0){
+                    descriptionElement.textContent = descriptionElement.textContent.substring(0, descriptionElement.textContent.length - 1);
+                }else{
+                    
+                }
+    
+                paragraphIndex--;
+            }
+        
+            if (currentDescriptionText.length >= 0) {
+              setTimeout(deleteParagraph, 0.03); 
+            }
+          }
+        
+          deleteParagraph();
+    }
+}

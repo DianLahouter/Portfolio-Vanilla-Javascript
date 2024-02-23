@@ -234,12 +234,21 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+
+.iconAndDescriptionWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .aboutMeIcons{
     height: 3vh;
     padding: 0.2vh;
     padding-right: 0.5vw;
+    filter: grayscale(100%);
 }
 
 #valuesIcon{
@@ -258,12 +267,26 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+.descriptionText{
+    display: none;
+}
+
+.descriptionTextStorage{
+    display: none;
+}
 
 #aboutMeOverview{
     top:7vh;
     left:50%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.4s;
+    transition: width 0.2s ease-out, left 0.2s ease-out;
+}
+
+#aboutMeOverview:hover{
+    width: 23vw;
+    left:43%;
+    z-index: 3;
 }
 
 #aboutMeGoals{

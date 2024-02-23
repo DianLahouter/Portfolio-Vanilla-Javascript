@@ -125,7 +125,7 @@
     height: 50vh;
     width: 100vw;
     top: 0vh;
-    background-color: rgb(217, 217, 217);
+    background-color: snow;
     left: -100vw;
     animation: openRight 0.3s ease-out forwards;
 }

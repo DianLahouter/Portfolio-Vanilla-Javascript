@@ -113,64 +113,163 @@ function turnLettersBackOn(wordElement, cleanInnerHtml){
 var elements = document.getElementsByClassName("aboutMeDescription");
 
 for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("mouseover", showDescriptionText);
-    elements[i].addEventListener("mouseout", hideDescriptionText);
+    elements[i].addEventListener("mouseenter", showDescriptionText);
+    elements[i].addEventListener("mouseleave", hideDescriptionText);
 }
 
 function showDescriptionText(event) {
-    var totalLettersAtAtime = 3;
-    var hoveredOverELement = event.currentTarget;
-    var descriptionText = hoveredOverELement.querySelector(".descriptionTextStorage").textContent;
-    var descriptionElement = hoveredOverELement.querySelector(".descriptionText");
+    event.stopPropagation();
 
-    if (window.getComputedStyle(descriptionElement).getPropertyValue('display') === "none"){
+    console.log("showing");
+    var totalLettersAtAtime = 6;
+    var hoveredOverElement = event.currentTarget;
+    var icon = hoveredOverElement.querySelector(".aboutMeIcons")
+    var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
+    var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
+
+    if (descriptionElement.getAttribute('data-visible') !== 'true') {
         var paragraphIndex = 0;
+        icon.style.filter = "grayscale(0%)";
+        descriptionElement.style.display = "block";
 
-        descriptionElement.style.display = "block"
-    
         function writeParagraph() {
+            if(descriptionElement.getAttribute('currently-deleting') == 'true'){
+                return
+            }
+
             for(var i = 0 ; i < totalLettersAtAtime ; i++){
-                if(descriptionText.length >= paragraphIndex)
+                if(descriptionText.length > paragraphIndex)
                     descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
-    
+
                 paragraphIndex++;
             }
-        
+
             if (paragraphIndex < descriptionText.length) {
-              setTimeout(writeParagraph, 0.09); 
+              setTimeout(writeParagraph, 0.04); 
+            } else {
+              descriptionElement.setAttribute('data-complete', 'true'); 
             }
           }
-        
+
           writeParagraph();
+
+          descriptionElement.setAttribute('data-visible', 'true'); 
     }
 }
 
 function hideDescriptionText(event) {
-    var totalLettersAtAtime = 8;
-    var hoveredOverELement = event.currentTarget;
-    var currentDescriptionText = hoveredOverELement.querySelector(".descriptionText").textContent;
-    var descriptionElement = hoveredOverELement.querySelector(".descriptionText");
+    event.stopPropagation();
+    console.log("deleting");
 
-    if (window.getComputedStyle(descriptionElement).getPropertyValue('display') === "block"){
-        console.log("hererrr");
+    var hoveredOverElement = event.currentTarget;
+    var icon = hoveredOverElement.querySelector(".aboutMeIcons")
+    var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
+
+    if (/*descriptionElement.getAttribute('data-complete') === 'true' */ true) {
+        descriptionElement.setAttribute('currently-deleting', 'true'); 
+        var currentDescriptionText = hoveredOverElement.querySelector(".descriptionText").textContent;
+        var totalLettersAtAtime = 7;
         var paragraphIndex = currentDescriptionText.length;
 
         function deleteParagraph() {
             for(var i = 0 ; i < totalLettersAtAtime ; i++){
-                if(paragraphIndex >= 0){
+                if(paragraphIndex > 0){
                     descriptionElement.textContent = descriptionElement.textContent.substring(0, descriptionElement.textContent.length - 1);
-                }else{
-                    
                 }
-    
+
                 paragraphIndex--;
             }
-        
-            if (currentDescriptionText.length >= 0) {
+
+            if (descriptionElement.textContent.length > 0) {
               setTimeout(deleteParagraph, 0.03); 
+            } else {
+              descriptionElement.style.display = "none";
+              icon.style.filter = "grayscale(100%)"; 
+              descriptionElement.setAttribute('data-visible', 'false'); 
+              descriptionElement.setAttribute('data-complete', 'false');
+              descriptionElement.setAttribute('currently-deleting', 'false'); 
             }
           }
-        
+
           deleteParagraph();
     }
 }
+
+const cursor = document.querySelector(".cursor");
+
+function moveCursor(e) {
+    cursor.style.top = e.pageY - 10 - window.scrollY + "px";
+    cursor.style.left = e.pageX - 10 + "px";
+}
+
+function updateCursor(e) {
+    requestAnimationFrame(() => {
+        moveCursor(e);
+    });
+}
+
+var waitToSpawnPixelFlag = false;
+var prevColour = 'white';
+
+document.addEventListener('mousemove', updateCursor);
+
+document.addEventListener('mousemove', e => {
+    if(!waitToSpawnPixelFlag){
+        setFlag();
+
+        setTimeout(() => {
+            setFlag();
+        }, 30); 
+
+        const yOffset = Math.random() < 0.5 ? -5 : 5;
+            
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+
+        if(prevColour == "white"){
+            pixel.style.backgroundColor = "#313131"
+            prevColour = "black";
+        }else{
+            pixel.style.backgroundColor = "#313131"
+            prevColour = "white";
+        }
+
+        pixel.style.top = (e.pageY + yOffset) + 'px';
+        pixel.style.left = e.pageX + 'px';
+
+        document.body.appendChild(pixel);
+
+        setTimeout(() => {
+            pixel.remove();
+        }, 120); 
+    }
+    
+});
+
+function setFlag(){
+    if(waitToSpawnPixelFlag)
+        waitToSpawnPixelFlag = false;
+    else
+        waitToSpawnPixelFlag = true;
+}
+
+
+const buttons = document.querySelectorAll(".button");
+
+buttons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        cursor.style.borderRadius = "50%"; 
+        cursor.style.borderWidth = "0.6vh"; 
+        // cursor.style.borderColor = "black"; 
+        cursor.style.height = "1vh"
+        cursor.style.width = "1vh"
+    });
+
+    button.addEventListener("mouseleave", () => {
+        cursor.style.borderRadius = "0%";
+        // cursor.style.borderColor = "#313131";
+        cursor.style.borderWidth = "0.5vh";
+        cursor.style.height = "0.8vh"
+        cursor.style.width = "0.8vh"
+    });
+});

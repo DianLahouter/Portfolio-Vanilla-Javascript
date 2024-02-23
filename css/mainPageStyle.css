@@ -275,10 +275,10 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
-#aboutMeOverview{
-    top:7vh;
-    left:50%;
-    animation: popIn 0.05s ease forwards; 
+#aboutMeOverview {
+    top: 7vh;
+    left: 50%;
+    animation: popIn 0.05s ease forwards;
     animation-delay: 1.4s;
     transition: width 0.2s ease-out, left 0.2s ease-out;
 }
@@ -288,6 +288,14 @@ body::-webkit-scrollbar-thumb {
     left:43%;
     z-index: 3;
 }
+
+#aboutMeOverview:hover {
+    width: 20vw;
+    left: 45%;
+    height: 40vh;
+    z-index: 3;
+}
+
 
 #aboutMeGoals{
     top:35vh;

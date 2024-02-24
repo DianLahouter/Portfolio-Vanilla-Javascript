@@ -125,11 +125,84 @@ function unOccupyLane(index){
 }
 
 
-var cursor = document.querySelector(".cursor")
+var cursor = document.querySelector(".cursor");
+
+function moveCursor(e) {
+    cursor.style.top = e.pageY - 10 - window.scrollY + "px";
+    cursor.style.left = e.pageX - 10 + "px";
+}
+
+function updateCursor(e) {
+    requestAnimationFrame(() => {
+        moveCursor(e);
+    });
+}
+
+var waitToSpawnPixelFlag = false;
+var prevColour = 'white';
+
+document.addEventListener('mousemove', updateCursor);
 
 document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: " + e.pageY+ "px; left: " + e.pageX+ "px;");
-})
+    if(!waitToSpawnPixelFlag){
+        setFlag();
+
+        setTimeout(() => {
+            setFlag();
+        }, 30); 
+
+        const yOffset = Math.random() < 0.5 ? -5 : 5;
+            
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+
+        if(prevColour == "white"){
+            pixel.style.backgroundColor = "#313131"
+            prevColour = "black";
+        }else{
+            pixel.style.backgroundColor = "#313131"
+            prevColour = "white";
+        }
+
+        pixel.style.top = (e.pageY + yOffset) + 'px';
+        pixel.style.left = e.pageX + 'px';
+
+        document.body.appendChild(pixel);
+
+        setTimeout(() => {
+            pixel.remove();
+        }, 120); 
+    }
+    
+});
+
+function setFlag(){
+    if(waitToSpawnPixelFlag)
+        waitToSpawnPixelFlag = false;
+    else
+        waitToSpawnPixelFlag = true;
+}
+
+
+const buttons = document.querySelectorAll("#clickForMoreButton");
+
+buttons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        cursor.style.borderRadius = "50%"; 
+        cursor.style.borderWidth = "0.6vh"; 
+        cursor.style.borderColor = "#313131"; 
+        cursor.style.height = "1vh"
+        cursor.style.width = "1vh"
+    });
+
+    button.addEventListener("mouseleave", () => {
+        cursor.style.borderRadius = "0%";
+        cursor.style.borderColor = "#616161";
+        cursor.style.borderWidth = "0.5vh";
+        cursor.style.height = "0.8vh"
+        cursor.style.width = "0.8vh"
+    });
+});
 
 
 

@@ -244,7 +244,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .aboutMeDescription:hover{
-    width: 23vw;
+    width: 26vw;
     z-index: 3;
 }
 
@@ -281,7 +281,10 @@ body::-webkit-scrollbar-thumb {
 .descriptionText{
     display: none;
     color: snow;
-    font-size: 1.6vh;
+    font-size: 1.2vh;
+    line-height:1.7em;
+    word-spacing: 0.3em;
+    letter-spacing: 0.01em;
 }
 
 .descriptionTextStorage{
@@ -297,36 +300,38 @@ body::-webkit-scrollbar-thumb {
 }
 
 #aboutMeOverview:hover{
-    width: 23vw;
+    width: 26vw;
     left:43%;
     z-index: 3;
 }
-
-#aboutMeOverview:hover {
-    width: 20vw;
-    left: 45%;
-    z-index: 3;
-}
-
 
 #aboutMeGoals{
     top:35vh;
     left:30%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 0.8s;
+    transition: width 0.2s ease-out, top 0.15s ease;
 }
+
+#aboutMeGoals:hover{
+    width: 26vw;
+    top:29.5vh;
+    z-index: 3;
+}
+
 
 #aboutMeInterests{
     top:40vh;
     left:60%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.7s;
-    transition: width 0.2s ease-out, left 0.2s ease-out;
+    transition: width 0.2s ease-out, left 0.2s ease, top 0.1s ease;
 }
 
 #aboutMeInterests:hover{
     width: 23vw;
     left:53%;
+    top:33vh;
     z-index: 3;
 }
 
@@ -335,21 +340,41 @@ body::-webkit-scrollbar-thumb {
     left:38%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1s;
+    transition: width 0.2s ease-out, top 0.13s ease;
+}
+
+#aboutMeValues:hover{
+    width: 26vw;
+    top:53vh;
+    z-index: 3;
 }
 
 #aboutMeExperience{
-    top:85vh;
+    top:80vh;
     left:43%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.2s;
+    transition: width 0.2s ease-out, top 0.13s ease;
 }
 
+#aboutMeExperience:hover{
+    width: 23vw;
+    top:73vh;
+    z-index: 3;
+}
 
 #aboutMeTop5{
     top:68vh;
     left:66%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.9s;
+    transition: width 0.2s ease-out, top 0.13s ease;
+}
+
+#aboutMeTop5:hover{
+    width: 23vw;
+    top:61vh;
+    z-index: 3;
 }
 
 
@@ -660,7 +685,7 @@ body::-webkit-scrollbar-thumb {
     height: 0.3vw;
     width: 0vw;
     background-color:  #222222;
-    top:87.48vh;
+    top:82.48vh;
     left:18vw;
     animation : drawLine15 0.7s ease-out forwards;
     animation-delay: 0.5s;
@@ -671,7 +696,7 @@ body::-webkit-scrollbar-thumb {
         height: 0vh;
     }
     100% {
-        height: 32.5vh;
+        height: 27.5vh;
     }
 }
 

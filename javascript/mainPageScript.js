@@ -117,26 +117,67 @@ for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseleave", hideDescriptionText);
 }
 
+// function showDescriptionText(event) {
+//     event.stopPropagation();
+
+//     console.log("showing");
+//     var totalLettersAtAtime = 6;
+//     var hoveredOverElement = event.currentTarget;
+//     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
+//     var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
+//     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
+
+//     if (descriptionElement.getAttribute('data-visible') !== 'true') {
+//         var paragraphIndex = 0;
+//         icon.style.filter = "grayscale(0%)";
+//         descriptionElement.style.display = "block";
+
+//         function writeParagraph() {
+//             if(descriptionElement.getAttribute('currently-deleting') == 'true'){
+//                 return
+//             }
+
+//             for(var i = 0 ; i < totalLettersAtAtime ; i++){
+//                 if(descriptionText.length > paragraphIndex)
+//                     descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
+
+//                 paragraphIndex++;
+//             }
+
+//             if (paragraphIndex < descriptionText.length) {
+//               setTimeout(writeParagraph, 0.04); 
+//             } else {
+//               descriptionElement.setAttribute('data-complete', 'true'); 
+//             }
+//           }
+
+//           writeParagraph();
+
+//           descriptionElement.setAttribute('data-visible', 'true'); 
+//     }
+// }
+
 function showDescriptionText(event) {
     event.stopPropagation();
 
     console.log("showing");
-    var totalLettersAtAtime = 6;
+    var totalLettersAtAtime = 8;
     var hoveredOverElement = event.currentTarget;
     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
     var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
 
-    if (descriptionElement.getAttribute('data-visible') !== 'true') {
+    if (descriptionElement.getAttribute('currently-deleting') !== 'true' || descriptionElement.getAttribute('currently-writing') !== 'true') {
         var paragraphIndex = 0;
         icon.style.filter = "grayscale(0%)";
         descriptionElement.style.display = "block";
+        descriptionElement.setAttribute('currently-writing', 'true'); 
 
         function writeParagraph() {
             if(descriptionElement.getAttribute('currently-deleting') == 'true'){
-                return
+                return;
             }
-
+            
             for(var i = 0 ; i < totalLettersAtAtime ; i++){
                 if(descriptionText.length > paragraphIndex)
                     descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
@@ -146,14 +187,12 @@ function showDescriptionText(event) {
 
             if (paragraphIndex < descriptionText.length) {
               setTimeout(writeParagraph, 0.04); 
-            } else {
-              descriptionElement.setAttribute('data-complete', 'true'); 
             }
           }
 
           writeParagraph();
 
-          descriptionElement.setAttribute('data-visible', 'true'); 
+          descriptionElement.setAttribute('currently-writing', 'false'); 
     }
 }
 
@@ -165,10 +204,13 @@ function hideDescriptionText(event) {
     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
 
-    if (/*descriptionElement.getAttribute('data-complete') === 'true' */ true) {
+    if (descriptionElement.getAttribute('currently-deleting') !== 'true') {
+
+        descriptionElement.setAttribute('currently-writing', 'false'); 
         descriptionElement.setAttribute('currently-deleting', 'true'); 
+
         var currentDescriptionText = hoveredOverElement.querySelector(".descriptionText").textContent;
-        var totalLettersAtAtime = 7;
+        var totalLettersAtAtime = 10;
         var paragraphIndex = currentDescriptionText.length;
 
         function deleteParagraph() {
@@ -185,8 +227,6 @@ function hideDescriptionText(event) {
             } else {
               descriptionElement.style.display = "none";
               icon.style.filter = "grayscale(100%)"; 
-              descriptionElement.setAttribute('data-visible', 'false'); 
-              descriptionElement.setAttribute('data-complete', 'false');
               descriptionElement.setAttribute('currently-deleting', 'false'); 
             }
           }
@@ -260,14 +300,14 @@ buttons.forEach(button => {
     button.addEventListener("mouseenter", () => {
         cursor.style.borderRadius = "50%"; 
         cursor.style.borderWidth = "0.6vh"; 
-        // cursor.style.borderColor = "black"; 
+        cursor.style.borderColor = "#313131"; 
         cursor.style.height = "1vh"
         cursor.style.width = "1vh"
     });
 
     button.addEventListener("mouseleave", () => {
         cursor.style.borderRadius = "0%";
-        // cursor.style.borderColor = "#313131";
+        cursor.style.borderColor = "#616161";
         cursor.style.borderWidth = "0.5vh";
         cursor.style.height = "0.8vh"
         cursor.style.width = "0.8vh"

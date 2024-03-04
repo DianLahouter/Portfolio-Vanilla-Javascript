@@ -259,9 +259,9 @@ document.addEventListener('mousemove', e => {
 
         setTimeout(() => {
             setFlag();
-        }, 30); 
+        }, 25); 
 
-        const yOffset = Math.random() < 0.5 ? -5 : 5;
+        const yOffset = Math.random() < 0.6 ? -6 : 6;
             
         const pixel = document.createElement('div');
         pixel.className = 'pixel';

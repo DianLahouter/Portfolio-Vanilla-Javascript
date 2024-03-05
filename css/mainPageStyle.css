@@ -281,7 +281,7 @@ body::-webkit-scrollbar-thumb {
 .descriptionText{
     display: none;
     color: snow;
-    font-size: 1.2vh;
+    font-size: calc(0.4vw + 0.55vh);
     line-height:1.7em;
     word-spacing: 0.3em;
     letter-spacing: 0.01em;

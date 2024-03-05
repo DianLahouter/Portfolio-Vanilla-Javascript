@@ -189,7 +189,7 @@ const buttons = document.querySelectorAll("#clickForMoreButton");
 buttons.forEach(button => {
     button.addEventListener("mouseenter", () => {
         cursor.style.borderRadius = "50%"; 
-        cursor.style.borderWidth = "0.6vh"; 
+        cursor.style.borderWidth = "0.7vh"; 
         cursor.style.borderColor = "#313131"; 
         cursor.style.height = "1vh"
         cursor.style.width = "1vh"
@@ -197,10 +197,10 @@ buttons.forEach(button => {
 
     button.addEventListener("mouseleave", () => {
         cursor.style.borderRadius = "0%";
-        cursor.style.borderColor = "#616161";
-        cursor.style.borderWidth = "0.5vh";
-        cursor.style.height = "0.8vh"
-        cursor.style.width = "0.8vh"
+        cursor.style.borderColor = "#1f1f1f";
+        cursor.style.borderWidth = "0.6vh";
+        cursor.style.height = "1.2vh"
+        cursor.style.width = "1.2vh"
     });
 });
 

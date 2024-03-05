@@ -238,8 +238,8 @@ function hideDescriptionText(event) {
 const cursor = document.querySelector(".cursor");
 
 function moveCursor(e) {
-    cursor.style.top = e.pageY - 10 - window.scrollY + "px";
-    cursor.style.left = e.pageX - 10 + "px";
+    cursor.style.top = e.pageY - 7 - window.scrollY + "px";
+    cursor.style.left = e.pageX - 7 + "px";
 }
 
 function updateCursor(e) {
@@ -259,9 +259,9 @@ document.addEventListener('mousemove', e => {
 
         setTimeout(() => {
             setFlag();
-        }, 25); 
+        }, 15); 
 
-        const yOffset = Math.random() < 0.6 ? -6 : 6;
+        const yOffset = Math.random() < 0.3 ? -3 : 3;
             
         const pixel = document.createElement('div');
         pixel.className = 'pixel';
@@ -281,7 +281,7 @@ document.addEventListener('mousemove', e => {
 
         setTimeout(() => {
             pixel.remove();
-        }, 120); 
+        }, 90); 
     }
     
 });
@@ -299,7 +299,7 @@ const buttons = document.querySelectorAll(".button");
 buttons.forEach(button => {
     button.addEventListener("mouseenter", () => {
         cursor.style.borderRadius = "50%"; 
-        cursor.style.borderWidth = "0.6vh"; 
+        cursor.style.borderWidth = "0.7vh"; 
         cursor.style.borderColor = "#313131"; 
         cursor.style.height = "1vh"
         cursor.style.width = "1vh"
@@ -307,9 +307,9 @@ buttons.forEach(button => {
 
     button.addEventListener("mouseleave", () => {
         cursor.style.borderRadius = "0%";
-        cursor.style.borderColor = "#616161";
-        cursor.style.borderWidth = "0.5vh";
-        cursor.style.height = "0.8vh"
-        cursor.style.width = "0.8vh"
+        cursor.style.borderColor = "#1f1f1f";
+        cursor.style.borderWidth = "0.6vh";
+        cursor.style.height = "1.2vh"
+        cursor.style.width = "1.2vh"
     });
 });

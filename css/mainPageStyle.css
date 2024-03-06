@@ -2,9 +2,9 @@
 .mainPageSection{
     height: 90vh;
     width:80%;
-    margin-left: 10%;
-    margin-bottom: 5vh;
-    margin-top: 5vh;
+    left: 10%;
+    bottom: 5vh;
+    top: 5vh;
 }
 
 
@@ -19,11 +19,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
-
-.letterGlitch{
-    opacity: 0; 
-}
-
 
 #leftTransitionObject{
     position: fixed;

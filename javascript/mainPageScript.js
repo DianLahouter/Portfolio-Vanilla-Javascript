@@ -117,46 +117,6 @@ for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseleave", hideDescriptionText);
 }
 
-// function showDescriptionText(event) {
-//     event.stopPropagation();
-
-//     console.log("showing");
-//     var totalLettersAtAtime = 6;
-//     var hoveredOverElement = event.currentTarget;
-//     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
-//     var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
-//     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
-
-//     if (descriptionElement.getAttribute('data-visible') !== 'true') {
-//         var paragraphIndex = 0;
-//         icon.style.filter = "grayscale(0%)";
-//         descriptionElement.style.display = "block";
-
-//         function writeParagraph() {
-//             if(descriptionElement.getAttribute('currently-deleting') == 'true'){
-//                 return
-//             }
-
-//             for(var i = 0 ; i < totalLettersAtAtime ; i++){
-//                 if(descriptionText.length > paragraphIndex)
-//                     descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
-
-//                 paragraphIndex++;
-//             }
-
-//             if (paragraphIndex < descriptionText.length) {
-//               setTimeout(writeParagraph, 0.04); 
-//             } else {
-//               descriptionElement.setAttribute('data-complete', 'true'); 
-//             }
-//           }
-
-//           writeParagraph();
-
-//           descriptionElement.setAttribute('data-visible', 'true'); 
-//     }
-// }
-
 function showDescriptionText(event) {
     event.stopPropagation();
 
@@ -306,10 +266,33 @@ buttons.forEach(button => {
     });
 
     button.addEventListener("mouseleave", () => {
-        cursor.style.borderRadius = "0%";
+        cursor.style.borderRadius = "20%";
         cursor.style.borderColor = "#1f1f1f";
         cursor.style.borderWidth = "0.6vh";
         cursor.style.height = "1.2vh"
         cursor.style.width = "1.2vh"
     });
 });
+
+
+var navIcons = document.getElementsByClassName("navIcon");
+
+for (var i = 0; i < navIcons.length; i++) {
+    navIcons[i].addEventListener("mouseup", function() {
+        setTimeout(() => {
+            if(navIcons[i].id == "aboutMeNavIcon" && document.body.id != "mainPageBody"){
+                window.location.href = "./Main_Page.html";
+            }else if(navIcons[i].id == "educationNavIcon" && document.body.id != "educationBody"){
+                window.location.href = "./Education.html";
+            }else if(navIcons[i].id == "skillsNavIcon" && document.body.id != "skillsBody"){
+                window.location.href = "./Skills.html";
+            }
+        }, 330);
+    
+        var element = document.getElementById('rightTransitionObject');
+        element.style.animation = 'closeLeft 0.3s ease-out forwards';
+    
+        var element = document.getElementById('leftTransitionObject');
+        element.style.animation = 'closeRight 0.3s ease-out forwards'; 
+    });
+}

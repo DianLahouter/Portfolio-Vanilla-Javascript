@@ -196,7 +196,7 @@ buttons.forEach(button => {
     });
 
     button.addEventListener("mouseleave", () => {
-        cursor.style.borderRadius = "0%";
+        cursor.style.borderRadius = "20%";
         cursor.style.borderColor = "#1f1f1f";
         cursor.style.borderWidth = "0.6vh";
         cursor.style.height = "1.2vh"

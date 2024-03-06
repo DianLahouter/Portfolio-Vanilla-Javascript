@@ -42,6 +42,7 @@ body {
     border-style: solid;
     border-width: 0.6vh;
     border-color: #1f1f1f;
+    border-radius: 20%;
     position: fixed;
     z-index: 9999;
     pointer-events: none;
@@ -57,7 +58,7 @@ body {
 .pixel {
     width: 0.7vh;
     height: 0.7vh;
-    position: absolute;
+    position: fixed;
     pointer-events: none;
     z-index: 999;
 }
@@ -117,5 +118,28 @@ body {
     font-family: Joystix;
 }
 
+#navbar{
+    top:35vh;
+    height: 27vh;
+    width: 3.5vw;
+    right: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #CDCDCD;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 1px 4px 1px 0px rgba(137,137,137,0.75);
+}
+
+.navIcon{
+    width: 75%;
+}
+
+.letterGlitch{
+    opacity: 0; 
+}
 
 

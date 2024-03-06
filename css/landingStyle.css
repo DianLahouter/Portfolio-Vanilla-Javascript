@@ -14,10 +14,6 @@
     position:absolute;
 }
 
-.letterGlitch{
-    opacity: 0; 
-}
-
 #monitorScreen {
     margin-top: 14vh;
     height: 53%; 

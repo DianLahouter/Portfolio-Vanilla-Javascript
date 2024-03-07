@@ -83,13 +83,15 @@ body::-webkit-scrollbar-thumb {
     bottom:2vh;
     left:2vh;
     height: 3vh;
+
 }
 
 
 .wire {
+    display: none;
     width: 1vw;
     height: 40vh;
-    border: 0.3vw solid snow;
+    border: 0.3vw solid gray;
     border-bottom: none;
     border-top-left-radius:30px; 
     border-top-right-radius: 30px;
@@ -107,9 +109,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .node {
+    display: none;
     width: 5vw;
     height: 5vw;
-    border: 0.3vw solid snow; 
+    border: 0.3vw solid gray; 
     border-radius: 100%;
     animation: popIn 0.15s ease-out forwards; 
     animation-delay: 0.6s;
@@ -201,7 +204,7 @@ body::-webkit-scrollbar-thumb {
 #aboutMeHeading{
     font-size: calc(3vw + 2vh);    
     position: absolute;
-    left:2vh;
+    left:16vh;
     top:45.5vh;
     text-align: center;
     word-spacing: calc(-0.9vw - 0.9vh);
@@ -227,8 +230,8 @@ body::-webkit-scrollbar-thumb {
     color: snow(226, 226, 226);
     text-align: center;
     position: absolute;
-    width: 10vw;
-    font-size: calc(0.8vw + 0.8vh);
+    width: 13vw;
+    font-size: calc(0.9vw + 0.9vh);
     z-index: 1;
     transform: scale(0); 
     display: flex;
@@ -236,6 +239,11 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     flex-direction: column;
     transition: width 0.2s ease-out;
+    color: rgb(230, 230, 230);
+    letter-spacing: 0.07em;
+    border-style: solid;
+    border-width: 0.5vh;
+    border-color: #5e7ca9;
 }
 
 .aboutMeDescription:hover{
@@ -288,7 +296,7 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeOverview {
     top: 7vh;
-    left: 50%;
+    left: 48%;
     animation: popIn 0.05s ease forwards;
     animation-delay: 1.4s;
     transition: width 0.2s ease-out, left 0.2s ease-out;
@@ -302,7 +310,7 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeGoals{
     top:35vh;
-    left:30%;
+    left:28%;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 0.8s;
     transition: width 0.2s ease-out, top 0.15s ease;

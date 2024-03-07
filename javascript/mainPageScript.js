@@ -8,7 +8,7 @@ flickerRandomLetter(aboutMeHeading);
 function deleteBinaryNumber(binaryNumber) {
     setTimeout(function() {
         binaryNumber.remove();
-    }, 4000); 
+    }, 6500); 
 }
 
 logoutButton.addEventListener('mouseup', function(event) {
@@ -24,7 +24,7 @@ logoutButton.addEventListener('mouseup', function(event) {
 });
 
 function spawnBinaryNumbers() {
-    var totalLanes = 14;
+    var totalLanes = 8;
     var spawnPoint = 0;
     var img = document.createElement('img');
 
@@ -65,7 +65,7 @@ function spawnBinaryNumbers() {
     deleteBinaryNumber(img);
     occupyLane(randomSegment);
 
-    var randomDelay = Math.random() * 30 + 25;
+    var randomDelay = Math.random() * 70 + 55;
     setTimeout(spawnBinaryNumbers, randomDelay);
 }
 
@@ -110,90 +110,94 @@ function turnLettersBackOn(wordElement, cleanInnerHtml){
 }
 
 
-var elements = document.getElementsByClassName("aboutMeDescription");
+// var elements = document.getElementsByClassName("aboutMeDescription");
 
-for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("mouseenter", showDescriptionText);
-    elements[i].addEventListener("mouseleave", hideDescriptionText);
-}
+// for (var i = 0; i < elements.length; i++) {
+//     elements[i].addEventListener("mouseenter", showDescriptionText);
+//     elements[i].addEventListener("mouseleave", hideDescriptionText);
+// }
 
-function showDescriptionText(event) {
-    event.stopPropagation();
+// function showDescriptionText(event) {
+//     event.stopPropagation();
 
-    console.log("showing");
-    var totalLettersAtAtime = 8;
-    var hoveredOverElement = event.currentTarget;
-    var icon = hoveredOverElement.querySelector(".aboutMeIcons")
-    var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
-    var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
+//     console.log("showing");
+//     var totalLettersAtAtime = 4;
+//     var hoveredOverElement = event.currentTarget;
+//     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
+//     var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
+//     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
 
-    if (descriptionElement.getAttribute('currently-deleting') !== 'true' || descriptionElement.getAttribute('currently-writing') !== 'true') {
-        var paragraphIndex = 0;
-        icon.style.filter = "grayscale(0%)";
-        descriptionElement.style.display = "block";
-        descriptionElement.setAttribute('currently-writing', 'true'); 
+//     if (descriptionElement.getAttribute('currently-deleting') !== 'true' || descriptionElement.getAttribute('currently-writing') !== 'true') {
+//         var paragraphIndex = 0;
+//         icon.style.filter = "grayscale(0%)";
+//         descriptionElement.style.display = "block";
+//         descriptionElement.setAttribute('currently-writing', 'true'); 
 
-        function writeParagraph() {
-            if(descriptionElement.getAttribute('currently-deleting') == 'true'){
-                return;
-            }
-            
-            for(var i = 0 ; i < totalLettersAtAtime ; i++){
-                if(descriptionText.length > paragraphIndex)
-                    descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
+//         function writeParagraph() {
+//             if(descriptionElement.getAttribute('currently-deleting') == 'true'){
+//                 return;
+//             }
 
-                paragraphIndex++;
-            }
+//             for(var i = 0 ; i < totalLettersAtAtime ; i++){
+//                 if(descriptionText.length > paragraphIndex)
+//                     descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
 
-            if (paragraphIndex < descriptionText.length) {
-              setTimeout(writeParagraph, 0.04); 
-            }
-          }
+//                 paragraphIndex++;
+//             }
 
-          writeParagraph();
+//             if (paragraphIndex < descriptionText.length) {
+//               setTimeout(writeParagraph, 0.04); 
+//             }
+//           }
 
-          descriptionElement.setAttribute('currently-writing', 'false'); 
-    }
-}
+//           writeParagraph();
 
-function hideDescriptionText(event) {
-    event.stopPropagation();
-    console.log("deleting");
+//           descriptionElement.setAttribute('currently-writing', 'false'); 
+//     }
+// }
 
-    var hoveredOverElement = event.currentTarget;
-    var icon = hoveredOverElement.querySelector(".aboutMeIcons")
-    var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
+// function hideDescriptionText(event) {
+//     event.stopPropagation();
+//     console.log("deleting");
 
-    if (descriptionElement.getAttribute('currently-deleting') !== 'true') {
+//     var hoveredOverElement = event.currentTarget;
+//     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
+//     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
 
-        descriptionElement.setAttribute('currently-writing', 'false'); 
-        descriptionElement.setAttribute('currently-deleting', 'true'); 
+//     if (descriptionElement.getAttribute('currently-deleting') !== 'true' || descriptionElement.getAttribute('currently-writing') !== 'true') {
 
-        var currentDescriptionText = hoveredOverElement.querySelector(".descriptionText").textContent;
-        var totalLettersAtAtime = 10;
-        var paragraphIndex = currentDescriptionText.length;
+//         descriptionElement.setAttribute('currently-writing', 'false'); 
+//         descriptionElement.setAttribute('currently-deleting', 'true'); 
 
-        function deleteParagraph() {
-            for(var i = 0 ; i < totalLettersAtAtime ; i++){
-                if(paragraphIndex > 0){
-                    descriptionElement.textContent = descriptionElement.textContent.substring(0, descriptionElement.textContent.length - 1);
-                }
+//         var currentDescriptionText = hoveredOverElement.querySelector(".descriptionText").textContent;
+//         var totalLettersAtAtime = 10;
+//         var paragraphIndex = currentDescriptionText.length;
 
-                paragraphIndex--;
-            }
+//         function deleteParagraph() {
+//             if(descriptionElement.getAttribute('currently-writing') == 'true'){
+//                 return;
+//             }
 
-            if (descriptionElement.textContent.length > 0) {
-              setTimeout(deleteParagraph, 0.03); 
-            } else {
-              descriptionElement.style.display = "none";
-              icon.style.filter = "grayscale(100%)"; 
-              descriptionElement.setAttribute('currently-deleting', 'false'); 
-            }
-          }
+//             for(var i = 0 ; i < totalLettersAtAtime ; i++){
+//                 if(paragraphIndex > 0){
+//                     descriptionElement.textContent = descriptionElement.textContent.substring(0, descriptionElement.textContent.length - 1);
+//                 }
 
-          deleteParagraph();
-    }
-}
+//                 paragraphIndex--;
+//             }
+
+//             if (descriptionElement.textContent.length > 0) {
+//               setTimeout(deleteParagraph, 0.03); 
+//             } else {
+//               descriptionElement.style.display = "none";
+//               icon.style.filter = "grayscale(100%)"; 
+//               descriptionElement.setAttribute('currently-deleting', 'false'); 
+//             }
+//           }
+
+//           deleteParagraph();
+//     }
+// }
 
 const cursor = document.querySelector(".cursor");
 
@@ -296,3 +300,5 @@ for (var i = 0; i < navIcons.length; i++) {
         element.style.animation = 'closeRight 0.3s ease-out forwards'; 
     });
 }
+
+// spawnBinaryNumbers();

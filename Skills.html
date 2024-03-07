@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/generalStyle.css">
+    <link rel="stylesheet" href="css/mainPageStyle.css">
+    <title>Dian Lahouter</title>
+</head>
+<body id="skillsBody">
+
+    <div id="navbar">
+        <img class="navIcon" id="aboutMeNavIcon" src="images/icons/aboutMe.png"/>
+        <img class="navIcon" id="educationNavIcon" src="images/icons/education.png"/>
+        <img class="navIcon" id="skillsNavIcon" src="images/icons/skills.png"/>
+    </div>
+
+    <div id="pageIndicatorsWrapper">
+        <img class="pageIndicator" id="aboutMePageIndicator" src="images/icons/pageIndicator.png"/>
+        <img class="pageIndicator" id="educationPageIndicator" src="images/icons/pageIndicator.png"/>
+        <img class="pageIndicator  currentIndicator" id="skillsPageIndicator" src="images/icons/pageIndicator.png"/>
+    </div>
+
+    <div class="cursor"></div>
+
+    <div id="transitionObjects">
+        <div id="leftTransitionObject"></div>
+        <div id="rightTransitionObject"></div>
+    </div>
+
+    <div id="logoutButton" class="button">
+        <p id="logooutButtonText" class="buttonText">Log Out</p>
+    </div>
+
+    <div id="circuitNodesGroup1" class="circuitNodesGroup">
+        <div id="circuitNode1" class="nodeAndWire">
+            <div id="node1" class="node"></div>
+            <div id="wire1" class="wire"></div>
+        </div>
+        <div id="circuitNode2" class="nodeAndWire">
+            <div id="node2" class="node"></div>
+            <div id="wire2" class="wire"></div>
+        </div>
+        <div id="circuitNode3" class="nodeAndWire">
+            <div id="node3" class="node"></div>
+            <div id="wire3" class="wire"></div>
+        </div>
+    </div>
+
+    <div id="circuitNodesGroup2" class="circuitNodesGroup">
+        <!-- <div id="circuitNode1" class="nodeAndWire">
+            <div id="node1" class="node"></div>
+            <div id="wire1" class="wire"></div>
+        </div> -->
+        <div id="circuitNode2" class="nodeAndWire">
+            <div id="node2" class="node"></div>
+            <div id="wire2" class="wire"></div>
+        </div>
+        <div id="circuitNode3" class="nodeAndWire">
+            <div id="node3" class="node"></div>
+            <div id="wire3" class="wire"></div>
+        </div>
+    </div>
+
+
+    <div id="aboutMeSection" class="mainPageSection">
+
+        <h id="aboutMeHeading">Skills</h>
+        <div id="aboutMeDesriptionsWrapper">
+            <div class="aboutMeDescription"  id="aboutMeOverview">
+                <div class="iconAndDescriptionWrapper">
+                    <img id="overviewIcon"class="aboutMeIcons" src="images/icons/javascript.png"/>JAVASCRIPT
+                </div>
+                <p id="overviewDescription" class="descriptionText"></p>
+                <p class="descriptionTextStorage">I'm Dian Lahouter. I'm all about slaying dragons and exploring post-apocalyptic worlds, but sometimes, I like to hit pause, step away from the controller, and dive into crafting user experiences that are not just intuitive, but downright fun. I've got a thing for exploring AI and crafting my own games, too. Thanks to my Multimedia degree, I've honed the art of blending creative thinking with logical problem-solving, and I put those skills to good use every single day!</p>
+            </div>
+            <div class="aboutMeDescription" id="aboutMeGoals">
+                <div class="iconAndDescriptionWrapper">
+                    <img id="goalsIcon" class="aboutMeIcons" src="images/icons/csharp.png"/>C#
+                </div>
+                <p id="goalsDescription" class="descriptionText"></p>
+                <p class="descriptionTextStorage">One day, I'll be a game developer. The path I'm on might twist and turn, but it's leading somewhere. I might not have all the skills I need just yet, but I'm honing them and crafting work I'm truly proud of. My top priority? Making sure each project I tackle is an improvement on the last.</p>
+            </div>
+            <div class="aboutMeDescription" id="aboutMeInterests">
+                <div class="iconAndDescriptionWrapper">
+                    <img id="interestsIcon" class="aboutMeIcons" src="images/icons/unity.png"/>UNITY
+                </div>
+                <p id="interestsDescription" class="descriptionText"></p>
+                <p class="descriptionTextStorage">I'm a cyclist, especially mountain biking. It's been a favorite pastime for my dad and me for years, crafting memories and keeping us sharp in body and mind. I'm a die-hard sports fan—my weekends often revolve around cheering on my teams, for better or worse. Of course, gaming is a hobbie, and I firmly believe it's the ultimate art form, thanks to gems like The Last of Us, Witcher 3, and Hollow Knight. Oh, and I'm a trainee cinephile, though I might not be ready to discuss Citizin Kane's themes just yet.</p>
+            </div>
+            <div class="aboutMeDescription" id="aboutMeValues">
+                <div class="iconAndDescriptionWrapper">
+                    <img id="valuesIcon" class="aboutMeIcons" src="images/icons/figma.png"/>FIGMA
+                </div>
+                <p id="valuesDescription" class="descriptionText"></p>
+                <p class="descriptionTextStorage">Honesty. Authenticity. Empathy. I live by these values. I believe in being brutally honest, even if it's not always convenient. In today's world, staying true to yourself is everything—never change to fit in. And empathy? It's key. Even when I don't agree with someone, I strive to understand where they're coming from. After all, everyone's got their reasons, right?</p>
+            </div>
+            <div class="aboutMeDescription" id="aboutMeExperience">
+                <div class="iconAndDescriptionWrapper">
+                    <img id="experienceIcon" class="aboutMeIcons" src="images/icons/java.png"/>JAVA
+                </div>
+                <p id="experienceDescription" class="descriptionText"></p>
+                <p class="descriptionTextStorage"> Degree in the bag, then kicked off my career in early 2024. Crunch the numbers—it's been a short ride, but I'm eager to soak up knowledge and thrilled for what's to come. Proudly owning the Junior Developer title, I've been diving into optimizing and revamping the client experience.</p>
+            </div>
+            <div class="aboutMeDescription" id="aboutMeTop5">
+                <div class="iconAndDescriptionWrapper">
+                    <img id="top5Icon" class="aboutMeIcons" src="images/icons/css.png"/>CSS
+                </div>
+                <p id="top5Description" class="descriptionText"></p>
+                <p class="descriptionTextStorage">Top 5 Movies: The Lord of The Rings Trilogy (3 movies, one epic journey), Inception, The Dark Knight, Pulp Fiction, Fight Club
+
+                    Top 5 Games: Witcher 3, Uncharted 4, The Last of Us, Hollow Knight, Mass Effect Trilogy
+                    
+                    Top 5 Books: The Lies of Locke Lamora, Stormlight Archive, Age of Madness, The First Law</p>
+            </div>
+        </div>
+
+        <div id="circuitLinesContainer">
+            <!-- Line from about me to goals -->
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <!-- Line from about me to goals -->
+            
+            <!-- Line from about me to overview -->
+            <div class="line-3"></div>
+            <div class="line-4"></div> 
+            <div class="line-5"></div>
+            <!-- Line from about me to overview -->
+
+            <!-- Line from about me to interests -->
+            <div class="line-6"></div>
+            <div class="line-7"></div>
+            <!-- Line from about me to interests -->
+
+            <!-- Line from about me to top 5 -->
+            <div class="line-8"></div>
+            <div class="line-9"></div> 
+            <div class="line-10"></div>
+            <!-- Line from about me to top 5 -->
+
+            <!-- Line from about me to values -->
+            <div class="line-11"></div>
+            <div class="line-12"></div> 
+            <div class="line-13"></div>
+            <!-- Line from about me to values -->
+
+            <!-- Line from about me to experience -->
+            <div class="line-14"></div>
+            <div class="line-15"></div> 
+            <!-- Line from about me to experience -->
+        </div>
+
+    </div>
+
+    <script src="javascript/generalScript.js" defer></script>
+    <script src="javascript/skillsScript.js" defer></script>
+</body>
+</html>

@@ -9,15 +9,25 @@
 </head>
 <body id="educationBody">
     
+    <div id="navbar">
+        <img class="navIcon" id="aboutMeNavIcon" src="images/icons/aboutMe.png"/>
+        <img class="navIcon" id="educationNavIcon" src="images/icons/education.png"/>
+        <img class="navIcon" id="skillsNavIcon" src="images/icons/skills.png"/>
+    </div>
+
+    <div id="pageIndicatorsWrapper">
+        <img class="pageIndicator" id="aboutMePageIndicator" src="images/icons/pageIndicator.png"/>
+        <img class="pageIndicator  currentIndicator" id="educationPageIndicator" src="images/icons/pageIndicator.png"/>
+        <img class="pageIndicator" id="skillsPageIndicator" src="images/icons/pageIndicator.png"/>
+    </div>
+
     <div id="transitionObjects">
         <div id="leftTransitionObject"></div>
         <div id="rightTransitionObject"></div>
     </div>
 
-    <div id="navbar">
-        <img class="navIcon" id="aboutMeNavIcon" src="images/icons/aboutMe.png"/>
-        <img class="navIcon" id="EducationNavIcon" src="images/icons/aboutMe.png"/>
-        <img class="navIcon" id="SkillsNavIcon" src="images/icons/aboutMe.png"/>
+    <div id="logoutButton" class="button">
+        <p id="logooutButtonText" class="buttonText">Log Out</p>
     </div>
 
     <div class="cursor"></div>
@@ -47,6 +57,8 @@
             </div>
         </div>
     </div>
+
+    <script src="javascript/generalScript.js" defer></script>
     <script src="javascript/educationPageScript.js" defer></script>
 </body>
 </html>

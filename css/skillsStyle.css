@@ -1,0 +1,708 @@
+/* ------------------------GENERAL-------------------------------- */
+.mainPageSection{
+    height: 90vh;
+    width:80%;
+    left: 10%;
+    bottom: 5vh;
+    top: 5vh;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+#leftTransitionObject{
+    position: fixed;
+    height: 50vh;
+    width: 100vw;
+    top: 0vh;
+    background-color: snow;
+    left: 0vw;
+    z-index: 2;
+    animation: openRight 0.3s ease-out forwards;
+}
+
+#rightTransitionObject{
+    position: fixed;
+    height: 50vh;
+    top:50vh;
+    width:100vw;
+    background-color:#6eb5b5;
+    left: 0vw;
+    z-index: 2;
+    animation: openLeft 0.3s ease-out forwards;
+}
+
+@keyframes openRight {
+    0% {
+        left: 0vw; 
+    }
+    100% {
+        left: -100vw;
+    }
+}
+
+@keyframes openLeft {
+    0% {
+        left: 0vw; 
+    }
+    100% {
+        left: 100vw;
+    }
+}
+
+@keyframes closeRight {
+    0% {
+        left: -100vw; 
+    }
+    100% {
+        left: 0vw;
+    }
+}
+
+@keyframes closeLeft {
+    0% {
+        left: 100vw; 
+    }
+    100% {
+        left: 0vw;
+    }
+}
+
+.wire {
+    display: none;
+    width: 1vw;
+    height: 40vh;
+    border: 0.3vw solid gray;
+    border-bottom: none;
+    border-top-left-radius:30px; 
+    border-top-right-radius: 30px;
+    animation: growWireGeneral 0.8s ease forwards; 
+}
+
+
+@keyframes growWireGeneral {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 40vh;
+    }
+}
+
+.node {
+    display: none;
+    width: 5vw;
+    height: 5vw;
+    border: 0.3vw solid gray; 
+    border-radius: 100%;
+    animation: popIn 0.15s ease-out forwards; 
+    animation-delay: 0.6s;
+    transform: scale(0); 
+}
+
+.nodeAndWire{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circuitNodesGroup{
+    display: flex;
+    justify-content: space-between;
+}
+
+#circuitNodesGroup1{
+    position: fixed;
+    bottom: -0.3vh;
+    right: 13vh;
+    width: 20vw;
+}
+
+#circuitNodesGroup2{
+    position: fixed;
+    top: -12.3vh;
+    left: -35vh;
+    width: 50vw;
+    transform: rotate(180deg);
+}
+
+#wire1{
+    height: 62vh;
+    animation: growWire1 0.8s ease-out forwards; 
+}
+
+@keyframes growWire1 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 62vh;
+    }
+}
+
+
+#wire2{
+    height: 44vh;
+    animation: growWire2 0.8s ease-out forwards; 
+}
+
+@keyframes growWire2 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 44vh;
+    }
+}
+
+
+
+#circuitNode2{
+    position: absolute;
+    right:22vw;
+    bottom: -1vh;
+}
+
+#circuitNode3{
+    position: absolute;
+    left:10vw;
+    bottom: -1vh;
+}
+
+/* ------------------------GENERAL-------------------------------- */
+
+
+
+/* ------------------------ABOUT ME-------------------------------- */
+#aboutMeSection{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:1vh;
+}
+
+#aboutMeHeading{
+    font-size: calc(3vw + 2vh);    
+    position: absolute;
+    left:16vh;
+    top:45.5vh;
+    text-align: center;
+    word-spacing: calc(-0.9vw - 0.9vh);
+    /* word-spacing: -0.4em; */
+}
+
+.currentlyHidden{
+    display: none;
+}
+.iconAndDescriptionWrapper{
+    font-family: Joystix;
+    font-size: calc(0.6vw + 0.6vh);
+}
+
+.aboutMeDescription {
+    background-color: #86a5d4;
+    padding: 1vh;
+    box-shadow: 0.4vh 0.7vh 0px -0.225vh rgba(38, 37, 37, 0.4);
+    -webkit-box-shadow: 0.4vh 0.7vh 0px -0.225vh rgba(38, 37, 37, 0.4);
+    -moz-box-shadow: 0.4vh 0.7vh 0px -0.225vh rgba(38, 37, 37, 0.4);
+    border-radius: 1.8vh;
+    font-weight: 500;
+    color: snow(226, 226, 226);
+    text-align: center;
+    position: absolute;
+    width: 13vw;
+    font-size: calc(0.9vw + 0.9vh);
+    z-index: 1;
+    transform: scale(0); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: width 0.2s ease-out;
+    color: rgb(230, 230, 230);
+    letter-spacing: 0.07em;
+    border-style: solid;
+    border-width: 0.5vh;
+    border-color: #5e7ca9;
+}
+
+.aboutMeDescription:hover{
+    width: 26vw;
+    z-index: 3;
+}
+
+
+.iconAndDescriptionWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutMeIcons{
+    height: 3vh;
+    padding: 0.2vh;
+    padding-right: 0.5vw;
+    filter: grayscale(100%);
+}
+
+#valuesIcon{
+    height: 2.7vh;
+    margin-bottom: 0.5vh;
+    padding: 0;
+    padding-right: 0.5vw;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.descriptionText{
+    display: none;
+    color: snow;
+    font-size: calc(0.4vw + 0.55vh);
+    line-height:1.7em;
+    word-spacing: 0.3em;
+    letter-spacing: 0.01em;
+}
+
+.descriptionTextStorage{
+    display: none;
+}
+
+#aboutMeOverview {
+    top: 7vh;
+    left: 48%;
+    animation: popIn 0.05s ease forwards;
+    animation-delay: 1.4s;
+    transition: width 0.2s ease-out, left 0.2s ease-out;
+}
+
+#aboutMeOverview:hover{
+    width: 26vw;
+    left:43%;
+    z-index: 3;
+}
+
+#aboutMeGoals{
+    top:35vh;
+    left:28%;
+    animation: popIn 0.05s ease forwards; 
+    animation-delay: 0.8s;
+    transition: width 0.2s ease-out, top 0.15s ease;
+}
+
+#aboutMeGoals:hover{
+    width: 26vw;
+    top:29.5vh;
+    z-index: 3;
+}
+
+
+#aboutMeInterests{
+    top:40vh;
+    left:60%;
+    animation: popIn 0.05s ease forwards; 
+    animation-delay: 1.7s;
+    transition: width 0.2s ease-out, left 0.2s ease, top 0.1s ease;
+}
+
+#aboutMeInterests:hover{
+    width: 23vw;
+    left:54%;
+    top:33vh;
+    z-index: 3;
+}
+
+#aboutMeValues{
+    top:61vh;
+    left:38%;
+    animation: popIn 0.05s ease forwards; 
+    animation-delay: 1s;
+    transition: width 0.2s ease-out, top 0.13s ease;
+}
+
+#aboutMeValues:hover{
+    width: 26vw;
+    top:53vh;
+    z-index: 3;
+}
+
+#aboutMeExperience{
+    top:80vh;
+    left:43%;
+    animation: popIn 0.05s ease forwards; 
+    animation-delay: 1.2s;
+    transition: width 0.2s ease-out, top 0.13s ease;
+}
+
+#aboutMeExperience:hover{
+    width: 23vw;
+    top:73vh;
+    z-index: 3;
+}
+
+#aboutMeTop5{
+    top:68vh;
+    left:66%;
+    animation: popIn 0.05s ease forwards; 
+    animation-delay: 1.9s;
+    transition: width 0.2s ease-out, top 0.13s ease;
+}
+
+#aboutMeTop5:hover{
+    width: 23vw;
+    top:61vh;
+    z-index: 3;
+}
+
+
+/* Line from about me to goals */
+.line-1 {
+    position: absolute;
+    height: 0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:46vh;
+    left:20%;
+}
+
+.line-2 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:38vh;
+    left:20%;
+}
+
+.line-1 {
+    animation: drawLine1 0.3s forwards;
+}
+
+.line-2 {
+    animation: drawLine2 0.5s forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes drawLine1 {
+    0% {
+        top: 46vh; 
+        height: 0vh;
+    }
+    100% {
+        top: 38vh;
+        height: 8vh;
+    }
+}
+
+@keyframes drawLine2 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 12vw;
+    }
+}
+
+/* Line from about me to goals */
+
+
+
+/* Line from about me to overview */
+.line-3 {
+    position: absolute;
+    height: 0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:42vh;
+    left:23%;
+    animation: drawLine3 0.2s ease-out forwards;
+}
+
+.line-4 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:42vh;
+    left:23%;
+    animation: drawLine4 0.7s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.line-5 {
+    position: absolute;
+    height: 0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:10.5vh;
+    left:55%;
+    animation: drawLine5 0.5s ease-out forwards;
+    animation-delay: 0.9s;
+}
+
+@keyframes drawLine3 {
+    0% {
+        top: 44vh; 
+        height: 0vh;
+    }
+    100% {
+        top: 42vh;
+        height: 3vh;
+    }
+}
+
+@keyframes drawLine4 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 32.3vw;
+    }
+}
+
+@keyframes drawLine5 {
+    0% {
+        top: 42.5vh; 
+        height: 0vh;
+    }
+    100% {
+        top: 10.5vh;
+        height: 32vh;
+    }
+}
+/* Line from about me to overview */
+
+
+/* Line from about me to interests */
+.line-6 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:48vh;
+    left:28.5vw;
+    animation : drawLine6 1.4s ease-out forwards;
+}
+
+.line-7 {
+    position: absolute;
+    height: 0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:44.53vh;
+    left:65.2vw;
+    animation : drawLine7 0.3s ease-out forwards;
+    animation-delay: 1.4s;
+}
+
+@keyframes drawLine6 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 37vw;
+    }
+}
+
+@keyframes drawLine7 {
+    0% {
+        top: 48.53vh; 
+        height: 0vh;
+    }
+    100% {
+        top: 44.53vh;
+        height: 4vh;
+    }
+}
+
+/* Line from about me to interests */
+
+
+/* Line from about me to top 5 */
+.line-8 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:50vh;
+    left:29vw;
+    animation : drawLine8 0.9s ease-out forwards;
+}
+
+ .line-9 {
+    position: absolute;
+    height:0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:50vh;
+    left:58vw;
+    animation : drawLine9 0.6s ease-out forwards;
+    animation-delay: 0.9s;
+}
+
+.line-10 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:70vh;
+    left:58vw;
+    animation : drawLine10 0.4s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes drawLine8 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 29vw;
+    }
+}
+
+
+@keyframes drawLine9 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 20vh;
+    }
+}
+
+@keyframes drawLine10 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 9vw;
+    }
+}
+/* Line from about me to top 5 */
+
+
+/* Line from about me to values */
+.line-11 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:52.3vh;
+    left:28vw;
+    animation : drawLine11 0.3s ease-out forwards;
+}
+
+ .line-12 {
+    position: absolute;
+    height:0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:52.3vh;
+    left:34vw;
+    animation : drawLine12 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.line-13 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:62.8vh;
+    left:34vw;
+    animation : drawLine13 0.2s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+
+@keyframes drawLine11 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 6vw;
+    }
+}
+
+
+@keyframes drawLine12 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 10.5vh;
+    }
+}
+
+@keyframes drawLine13 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 5vw;
+    }
+}
+/* Line from about me to values */
+
+
+
+/* Line from about me to experience */
+.line-14 {
+    position: absolute;
+    height:0vh;
+    width: 0.3vw;
+    background-color:  #222222;
+    top:55vh;
+    left:18vw;
+    animation : drawLine14 0.5s ease-out forwards;
+}
+
+.line-15 {
+    position: absolute;
+    height: 0.3vw;
+    width: 0vw;
+    background-color:  #222222;
+    top:82.48vh;
+    left:18vw;
+    animation : drawLine15 0.7s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes drawLine14 {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 27.5vh;
+    }
+}
+
+@keyframes drawLine15 {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 30vw;
+    }
+}
+/* Line from about me to experience */
+
+
+/* ------------------------ABOUT ME-------------------------------- */

@@ -187,4 +187,3 @@ function turnLettersBackOn(wordElement, cleanInnerHtml){
 // }
 
 
-

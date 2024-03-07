@@ -146,7 +146,7 @@ function unOccupyLane(index){
     matrixLanes[index] = 0;
 }
 
-var navIcons = document.getElementsByClassName("navIcon");
+var navIcons = document.getElementsByClassName(".navIcon");
 
 for (var i = 0; i < navIcons.length; i++) {
     navIcons[i].addEventListener("mouseup", function() {

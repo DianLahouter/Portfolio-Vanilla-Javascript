@@ -8,18 +8,6 @@
 }
 
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
-body::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: transparent;
-}
-
 #leftTransitionObject{
     position: fixed;
     height: 50vh;
@@ -82,7 +70,7 @@ body::-webkit-scrollbar-thumb {
     display: none;
     width: 1vw;
     height: 40vh;
-    border: 0.3vw solid gray;
+    border: 0.3vw solid #8f8f8f;
     border-bottom: none;
     border-top-left-radius:30px; 
     border-top-right-radius: 30px;
@@ -377,7 +365,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:46vh;
     left:20%;
 }
@@ -386,7 +374,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:38vh;
     left:20%;
 }
@@ -429,7 +417,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:42vh;
     left:23%;
     animation: drawLine3 0.2s ease-out forwards;
@@ -439,7 +427,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:42vh;
     left:23%;
     animation: drawLine4 0.7s ease-out forwards;
@@ -450,7 +438,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:10.5vh;
     left:55%;
     animation: drawLine5 0.5s ease-out forwards;
@@ -495,7 +483,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:48vh;
     left:28.5vw;
     animation : drawLine6 1.4s ease-out forwards;
@@ -505,7 +493,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:44.53vh;
     left:65.2vw;
     animation : drawLine7 0.3s ease-out forwards;
@@ -540,7 +528,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:50vh;
     left:29vw;
     animation : drawLine8 0.9s ease-out forwards;
@@ -550,7 +538,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height:0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:50vh;
     left:58vw;
     animation : drawLine9 0.6s ease-out forwards;
@@ -561,7 +549,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:70vh;
     left:58vw;
     animation : drawLine10 0.4s ease-out forwards;
@@ -603,7 +591,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:52.3vh;
     left:28vw;
     animation : drawLine11 0.3s ease-out forwards;
@@ -613,7 +601,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height:0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:52.3vh;
     left:34vw;
     animation : drawLine12 0.5s ease-out forwards;
@@ -624,7 +612,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:62.8vh;
     left:34vw;
     animation : drawLine13 0.2s ease-out forwards;
@@ -668,7 +656,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height:0vh;
     width: 0.3vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:55vh;
     left:18vw;
     animation : drawLine14 0.5s ease-out forwards;
@@ -678,7 +666,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     height: 0.3vw;
     width: 0vw;
-    background-color:  #222222;
+    background-color:  #525252;
     top:82.48vh;
     left:18vw;
     animation : drawLine15 0.7s ease-out forwards;

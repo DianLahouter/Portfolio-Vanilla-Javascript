@@ -8,6 +8,18 @@
     src: url("../fonts/SourceCodePro.ttf");
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
 h, h span{
     font-family: Joystix;
     color: #525252;
@@ -123,7 +135,7 @@ body {
 
 #navbar{
     top:35vh;
-    height: 27vh;
+    height: 30vh;
     width: 3.8vw;
     right: 0;
     position: fixed;
@@ -142,7 +154,7 @@ body {
 }
 
 .navIcon{
-    height: 6vh;
+    height: 7vh;
     transition: transform 0.2s;
 }
 
@@ -177,7 +189,7 @@ body {
 
 #pageIndicatorsWrapper{
     top:35vh;
-    height: 27vh;
+    height: 30vh;
     width: 3.5vw;
     right: 3.2vw;
     position: fixed;

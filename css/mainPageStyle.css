@@ -201,6 +201,21 @@ body::-webkit-scrollbar-thumb {
     top:1vh;
 }
 
+#mainPageBody{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#meWrapper{
+    bottom: 0;
+    /* margin-left: 50%; */
+}
+
+#meImg{
+    width: 44vw;
+}
+
 #aboutMeHeading{
     font-size: calc(3vw + 2vh);    
     position: absolute;

@@ -179,3 +179,30 @@ logoutButton.addEventListener('mouseup', function(event) {
     var element = document.getElementById('leftTransitionObject');
     element.style.animation = 'closeRight 0.3s ease-out forwards';
 });
+
+
+function flickerRandomLetter(wordElement, maxTimeBetweenTurnOff = 3000, minTimeBetweenTurnOff = 1500, maxTimeBetweenTurnOn = 300, minTimeBetweenTurnOn = 50){
+    var cleanWordElement = wordElement.innerHTML;
+    let textContent = wordElement.textContent;
+    let randomLetterIndex;
+    do {
+        randomLetterIndex = Math.floor(Math.random() * textContent.length);
+    } while (randomLetterIndex === 4);
+    
+
+    textContent = textContent.substring(0, randomLetterIndex) + '<span class="letterGlitch">' + textContent[randomLetterIndex] + '</span>' + textContent.substring(randomLetterIndex+1);
+
+    wordElement.innerHTML = textContent;
+
+    setTimeout(function() {
+        flickerRandomLetter(wordElement); 
+    }, Math.random() * (maxTimeBetweenTurnOff - minTimeBetweenTurnOff) + minTimeBetweenTurnOff);
+
+    setTimeout(function() {
+        turnLettersBackOn(wordElement,cleanWordElement); 
+    }, Math.random() * (maxTimeBetweenTurnOn - minTimeBetweenTurnOn) + minTimeBetweenTurnOff);
+}
+
+function turnLettersBackOn(wordElement, cleanInnerHtml){
+    wordElement.innerHTML = cleanInnerHtml;
+}

@@ -2,7 +2,7 @@ var matrixLanes = [];
 var aboutMeHeading = document.getElementById("aboutMeHeading");
 
 //spawnBinaryNumbers();
-flickerRandomLetter(aboutMeHeading,2000,1400,10,5);
+flickerRandomLetter(aboutMeHeading,2300,1700,600,50);
 
 function deleteBinaryNumber(binaryNumber) {
     setTimeout(function() {
@@ -69,93 +69,38 @@ function unOccupyLane(index){
 }
 
 
-// var elements = document.getElementsByClassName("aboutMeDescription");
+var elements = document.getElementsByClassName("aboutMeDescription");
 
-// for (var i = 0; i < elements.length; i++) {
-//     elements[i].addEventListener("mouseenter", showDescriptionText);
-//     elements[i].addEventListener("mouseleave", hideDescriptionText);
-// }
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("mouseenter", function(event) {
+        var skillBarBackground = this.querySelector(".skillBarBackground");
+        var skillLevelText = this.querySelector(".skillLevelText");
+        var descriptionText = this.querySelector(".descriptionText");
 
-// function showDescriptionText(event) {
-//     event.stopPropagation();
+        clearTimeout(this.timeoutId);
 
-//     console.log("showing");
-//     var totalLettersAtAtime = 4;
-//     var hoveredOverElement = event.currentTarget;
-//     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
-//     var descriptionText = hoveredOverElement.querySelector(".descriptionTextStorage").textContent;
-//     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
+        this.timeoutId = setTimeout(function() {
+            if (skillBarBackground && skillLevelText) {
+                skillBarBackground.style.display = "flex";
+                skillLevelText.style.display = "block";
+                descriptionText.style.display = "block";
+            }
+        }, 200); 
+    });
 
-//     if (descriptionElement.getAttribute('currently-deleting') !== 'true' || descriptionElement.getAttribute('currently-writing') !== 'true') {
-//         var paragraphIndex = 0;
-//         icon.style.filter = "grayscale(0%)";
-//         descriptionElement.style.display = "block";
-//         descriptionElement.setAttribute('currently-writing', 'true'); 
+    elements[i].addEventListener("mouseleave", function(event) {
+        var skillBarBackground = this.querySelector(".skillBarBackground");
+        var skillLevelText = this.querySelector(".skillLevelText");
+        var descriptionText = this.querySelector(".descriptionText");
 
-//         function writeParagraph() {
-//             if(descriptionElement.getAttribute('currently-deleting') == 'true'){
-//                 return;
-//             }
+        clearTimeout(this.timeoutId);
 
-//             for(var i = 0 ; i < totalLettersAtAtime ; i++){
-//                 if(descriptionText.length > paragraphIndex)
-//                     descriptionElement.textContent = descriptionElement.textContent + descriptionText[paragraphIndex];
-
-//                 paragraphIndex++;
-//             }
-
-//             if (paragraphIndex < descriptionText.length) {
-//               setTimeout(writeParagraph, 0.04); 
-//             }
-//           }
-
-//           writeParagraph();
-
-//           descriptionElement.setAttribute('currently-writing', 'false'); 
-//     }
-// }
-
-// function hideDescriptionText(event) {
-//     event.stopPropagation();
-//     console.log("deleting");
-
-//     var hoveredOverElement = event.currentTarget;
-//     var icon = hoveredOverElement.querySelector(".aboutMeIcons")
-//     var descriptionElement = hoveredOverElement.querySelector(".descriptionText");
-
-//     if (descriptionElement.getAttribute('currently-deleting') !== 'true' || descriptionElement.getAttribute('currently-writing') !== 'true') {
-
-//         descriptionElement.setAttribute('currently-writing', 'false'); 
-//         descriptionElement.setAttribute('currently-deleting', 'true'); 
-
-//         var currentDescriptionText = hoveredOverElement.querySelector(".descriptionText").textContent;
-//         var totalLettersAtAtime = 10;
-//         var paragraphIndex = currentDescriptionText.length;
-
-//         function deleteParagraph() {
-//             if(descriptionElement.getAttribute('currently-writing') == 'true'){
-//                 return;
-//             }
-
-//             for(var i = 0 ; i < totalLettersAtAtime ; i++){
-//                 if(paragraphIndex > 0){
-//                     descriptionElement.textContent = descriptionElement.textContent.substring(0, descriptionElement.textContent.length - 1);
-//                 }
-
-//                 paragraphIndex--;
-//             }
-
-//             if (descriptionElement.textContent.length > 0) {
-//               setTimeout(deleteParagraph, 0.03); 
-//             } else {
-//               descriptionElement.style.display = "none";
-//               icon.style.filter = "grayscale(100%)"; 
-//               descriptionElement.setAttribute('currently-deleting', 'false'); 
-//             }
-//           }
-
-//           deleteParagraph();
-//     }
-// }
+        if (skillBarBackground && skillLevelText) {
+            skillBarBackground.style.display = "none";
+            skillLevelText.style.display = "none";
+            descriptionText.style.display = "none";
+        }
+    });
+}
 
 

@@ -182,25 +182,28 @@ logoutButton.addEventListener('mouseup', function(event) {
 
 
 function flickerRandomLetter(wordElement, maxTimeBetweenTurnOff = 3000, minTimeBetweenTurnOff = 1500, maxTimeBetweenTurnOn = 300, minTimeBetweenTurnOn = 50){
+//    console.log("minTimeBetweeTurnOff: " + minTimeBetweenTurnOff);
+//    console.log("maxTimeBetweeTurnOff: " + maxTimeBetweenTurnOff);
+//    console.log("minTimeBetweeTurnOn: " + minTimeBetweenTurnOn);
+//    console.log("maxTimeBetweeTurnOn: " + maxTimeBetweenTurnOn);
+
     var cleanWordElement = wordElement.innerHTML;
     let textContent = wordElement.textContent;
     let randomLetterIndex;
-    do {
-        randomLetterIndex = Math.floor(Math.random() * textContent.length);
-    } while (randomLetterIndex === 4);
-    
+
+    randomLetterIndex = Math.floor(Math.random() * textContent.length);
 
     textContent = textContent.substring(0, randomLetterIndex) + '<span class="letterGlitch">' + textContent[randomLetterIndex] + '</span>' + textContent.substring(randomLetterIndex+1);
 
     wordElement.innerHTML = textContent;
 
     setTimeout(function() {
-        flickerRandomLetter(wordElement); 
-    }, Math.random() * (maxTimeBetweenTurnOff - minTimeBetweenTurnOff) + minTimeBetweenTurnOff);
-
-    setTimeout(function() {
         turnLettersBackOn(wordElement,cleanWordElement); 
-    }, Math.random() * (maxTimeBetweenTurnOn - minTimeBetweenTurnOn) + minTimeBetweenTurnOff);
+    }, Math.random() * (maxTimeBetweenTurnOn - minTimeBetweenTurnOn) + minTimeBetweenTurnOn);
+    
+    setTimeout(function() {
+        flickerRandomLetter(wordElement, maxTimeBetweenTurnOff, minTimeBetweenTurnOff, maxTimeBetweenTurnOn, minTimeBetweenTurnOn); 
+    }, Math.random() * (maxTimeBetweenTurnOff - minTimeBetweenTurnOff) + minTimeBetweenTurnOff);
 }
 
 function turnLettersBackOn(wordElement, cleanInnerHtml){

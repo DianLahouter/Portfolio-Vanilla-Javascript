@@ -98,7 +98,7 @@ body {
 
 .button {
     font-size: 2vh;
-    padding: 1.3vh;
+    padding: 1.5vh;
     border-radius:2vh;
     border-width: 0.5vh;
     border-style: solid;
@@ -134,8 +134,8 @@ body {
 }
 
 #navbar{
-    top:35vh;
-    height: 30vh;
+    top:33vh;
+    height: 34vh;
     width: 3.8vw;
     right: 0;
     position: fixed;
@@ -188,8 +188,8 @@ body {
 
 
 #pageIndicatorsWrapper{
-    top:35vh;
-    height: 30vh;
+    top:33vh;
+    height: 34vh;
     width: 3.5vw;
     right: 3.2vw;
     position: fixed;

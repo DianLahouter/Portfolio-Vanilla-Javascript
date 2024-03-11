@@ -216,25 +216,12 @@
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    /* transition: width 0.2s ease-out, height 0.4s; */
     color: rgb(230, 230, 230);
     letter-spacing: 0.07em;
-    border-style: solid;
+    /* border-style: solid;
     border-width: 0.5vh;
-    border-color: #5e7ca9;
+    border-color: #5e7ca9; */
 }
-
-/* .aboutMeDescription:hover {
-    width: 26vw;
-    height: 30%; 
-    z-index: 3;
-} */
-
-/* .aboutMeDescription:hover .descriptionText {
-    opacity: 1;
-    position: relative;
-}
-*/
 
 .descriptionText {
     color: rgb(25, 25, 25);
@@ -341,10 +328,11 @@
     top: 7vh;
     left: 48%;
     height: 3vh;
+    background-color: #86a5d4;
     animation: popIn 0.05s ease forwards;
     animation-delay: 1.4s;
-    transition: left 0.1s , width 0.1s , height 0.1s;
-    transition-delay: 0s, 0s, 0.2s; 
+    transition: left 0.15s , width 0.15s , height 0.15s, background-color 0.15s;
+    transition-delay: 0s, 0s, 0s,0s; 
 }
 
 #aboutMeOverview:hover {
@@ -352,99 +340,110 @@
     left: 43%;
     width: 23vw;
     height: 25vh;
-    transition-delay: 0s, 0s, 0.2s; 
+    background-color: #99b8e6;
+    transition-delay: 0s, 0s, 0s,0s; 
 }
 
 #aboutMeGoals{
     top:35vh;
     left:28%;
+    background-color: #86a5d4;
     height: 3vh;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 0.8s;
-    transition: width 0.1s , top 0.15s , height 0.1s;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition: width 0.3s , top 0.3s , height 0.3s, background-color 0.3s;
+    transition-delay: 0s, 0s, 0s; 
 }
 
 #aboutMeGoals:hover{
     width: 26vw;
     height: 16vh;
+    background-color: #99b8e6;
     top:29.5vh;
     z-index: 3;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition-delay: 0s, 0s, 0s; 
 }
 
 
 #aboutMeInterests{
     top:40vh;
     left:60%;
+    background-color: #86a5d4;
     height: 3vh;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.7s;
-    transition: width 0.1s ease-out, top 0.15s ease, height 0.1s, left 0.2s;
-    transition-delay: 0s, 0.2s, 0.2s,0s; 
+    transition: width 0.3s , top 0.3s , height 0.3s, left 0.3s,background-color 0.3s;
+    transition-delay: 0s, 0.0s, 0.0s,0s; 
 }
 
 #aboutMeInterests:hover{
     width: 23vw;
-    left:54%;
+    left:55%;
     top:33vh;
+    background-color: #99b8e6;
     height: 20vh;
     z-index: 3;
-    transition-delay: 0s, 0.2s, 0.2s,0s; 
+    transition-delay: 0s, 0s, 0s,0s; 
 }
 
 #aboutMeValues{
     top:61vh;
     left:38%;
     height: 3vh;
+    background-color: #86a5d4;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1s;
-    transition: width 0.1s , top 0.15s , height 0.1s;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition: width 0.3s , top 0.3s , height 0.3s ,background-color 0.3s;
+    transition-delay: 0s, 0s, 0s, 0s; 
 }
 
 #aboutMeValues:hover{
     width: 26vw;
     height: 16vh;
     top:53vh;
+    background-color: #99b8e6;
     z-index: 3;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition-delay: 0s, 0s, 0s, 0s; 
 }
 
 #aboutMeExperience{
     top:80vh;
     left:43%;
     height: 3vh;
+    background-color: #86a5d4;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.2s;
-    transition: width 0.1s , top 0.15s , height 0.1s;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition: width 0.3s , top 0.3s , height 0.3s, background-color 0.3s;
+    transition-delay: 0s, 0s, 0s; 
 }
 
 #aboutMeExperience:hover{
     width: 23vw;
     height: 19vh;
+    background-color: #99b8e6;
     top:73vh;
     z-index: 3;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition-delay: 0s, 0s, 0s; 
 }
 
 #aboutMeTop5{
     top:68vh;
     left:66%;
+    background-color: #86a5d4;
     height: 3vh;
     animation: popIn 0.05s ease forwards; 
     animation-delay: 1.9s;
-    transition: width 0.1s , top 0.15s , height 0.1s;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition: width 0.3s , top 0.3s , height 0.3s, background-color 0.3s;
+    transition-delay: 0s, 0s, 0s; 
 }
 
 #aboutMeTop5:hover{
     width: 23vw;
     top:61vh;
+    background-color: #99b8e6;
     height: 20vh;
     z-index: 3;
-    transition-delay: 0s, 0.2s, 0.2s; 
+    transition-delay: 0s, 0s, 0s; 
 }
 
 

@@ -6,7 +6,7 @@
     box-shadow: 0.15vh 1.325vh 0px -0.225vh rgba(38,37,37,0.4); 
     -webkit-box-shadow: 0.15vh 1.325vh 0px -0.225vh rgba(38,37,37,0.4); 
     -moz-box-shadow: 0.15vh 1.325vh 0px -0.225vh rgba(38,37,37,0.4);
-    border-radius: 30px;
+    border-radius: 5vh;
 }
   
 .column {
@@ -29,16 +29,19 @@ body{
     height: 20%;
     bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color:  rgba(47, 70, 104, 0.5);
     color: white;
     overflow: hidden;
     text-align: center;
     transition: height 0.6s ease-out, background-color 0.6s;
+    /* border-width: 0.8vh;
+    border-style: solid;
+    border-color: #86a5d4; */
 }
   
 .footer:hover {
     height: 87%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(47, 70, 104, 0.8);
 }
 
 .educationImageWrapper {
@@ -46,6 +49,10 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.educationImage{
+    height: 50%;
 }
   
 .educationDescriptionText {
@@ -73,8 +80,8 @@ body{
 
 .primary-school {
     flex-basis: 23%; 
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius:5vh;
+    border-bottom-left-radius: 5vh;
 
 }
 
@@ -88,16 +95,16 @@ body{
 
 .work {
     flex-basis: 22%; 
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-right-radius: 5vh;
+    border-bottom-right-radius: 5vh;
 }
 
 #primarySchoolFooter{
-    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 5vh;
 }
 
 #workFooter{
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 5vh;
 }
 
 #leftTransitionObject{

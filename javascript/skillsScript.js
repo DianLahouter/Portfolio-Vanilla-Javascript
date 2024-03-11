@@ -85,7 +85,7 @@ for (var i = 0; i < elements.length; i++) {
                 skillLevelText.style.display = "block";
                 descriptionText.style.display = "block";
             }
-        }, 200); 
+        }, 250); 
     });
 
     elements[i].addEventListener("mouseleave", function(event) {

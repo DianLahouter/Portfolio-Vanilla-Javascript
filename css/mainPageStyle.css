@@ -132,20 +132,20 @@ body::-webkit-scrollbar-thumb {
 
 .aboutMeDescription {
     background-color: #86a5d4;
-    padding: 1vh;
-    box-shadow: 0.4vh 0.7vh 0px -0.225vh rgba(38, 37, 37, 0.4);
+    padding: 1.7vh;
+    box-shadow: 0.8px 3px 4px 1px rgba(38, 37, 37, 0.4);
     border-radius: 1.8vh;
     font-weight: 500;
     color: snow(226, 226, 226);
     text-align: center;
     position: absolute;
     width: 18vw;
-    height: 9%;
+    height: 3vh;
     font-size: calc(0.9vw + 0.9vh);
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     color: rgb(230, 230, 230);
     letter-spacing: 0.07em;
@@ -206,15 +206,14 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeOverview {
     top: 8vh;
-    left: 43vw;
-    height: 5vh;
+    left: 40vw;
+    height: 3vh;
     background-color: #86a5d4;
-    transition: left 0.3s , width 0.3s , height 0.3s, background-color 0.3s, top 0.3s;
+    transition: left 0.2s , width 0.2s , height 0.2s, background-color 0.2s, top 0.2s;
     transition-delay: 0s, 0s, 0s,0s; 
 }
 
 #aboutMeOverview:hover {
-    justify-content: start;
     left: 38vw;
     width: 24vw;
     height: 25vh;
@@ -228,7 +227,7 @@ body::-webkit-scrollbar-thumb {
     left:15vw;
     background-color: #86a5d4;
     height: 3vh;
-    transition: width 0.3s , top 0.3s , height 0.3s, background-color 0.3s, left 0.3s;
+    transition: width 0.2s , top 0.2s , height 0.2s, background-color 0.2s, left 0.2s;
     transition-delay: 0s, 0s, 0s; 
 }
 
@@ -248,7 +247,7 @@ body::-webkit-scrollbar-thumb {
     right:15vw;
     background-color: #86a5d4;
     height: 3vh;
-    transition: width 0.3s , top 0.3s , height 0.3s, right 0.3s,background-color 0.3s;
+    transition: width 0.2s , top 0.2s , height 0.2s, right 0.2s,background-color 0.2s;
     transition-delay: 0s, 0.0s, 0.0s,0s; 
 }
 
@@ -267,7 +266,7 @@ body::-webkit-scrollbar-thumb {
     left:15vw;
     height: 3vh;
     background-color: #86a5d4;
-    transition: width 0.3s , top 0.3s , height 0.3s ,background-color 0.3s,left 0.3s;
+    transition: width 0.2s , top 0.2s , height 0.2s ,background-color 0.2s,left 0.2s;
     transition-delay: 0s, 0s, 0s, 0s; 
 }
 
@@ -286,7 +285,7 @@ body::-webkit-scrollbar-thumb {
     left:43%;
     height: 3vh;
     background-color: #86a5d4;
-    transition: width 0.3s , top 0.3s , height 0.3s, background-color 0.3s;
+    transition: width 0.2s , top 0.2s , height 0.2s, background-color 0.2s;
     transition-delay: 0s, 0s, 0s; 
 }
 
@@ -304,7 +303,7 @@ body::-webkit-scrollbar-thumb {
     right: 15vw;
     background-color: #86a5d4;
     height: 3vh;
-    transition: width 0.3s , top 0.3s , height 0.3s, background-color 0.3s, right 0.3s;
+    transition: width 0.2s , top 0.2s , height 0.2s, background-color 0.2s, right 0.2s;
     transition-delay: 0s, 0s, 0s; 
 }
 

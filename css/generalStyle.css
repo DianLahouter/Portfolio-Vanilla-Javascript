@@ -35,7 +35,7 @@ body {
     width: 100%;
     margin: 0;
     background-color: #d3ffff;
-    background: radial-gradient(circle, rgba(191,235,235,1) 0%, rgba(162,210,210,1) 100%);
+    background: radial-gradient(circle, rgb(225, 244, 244) 0%, rgba(162,210,210,1) 100%);
     cursor: none;
 }
   
@@ -146,11 +146,11 @@ body {
     border-bottom-left-radius: 20px;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 1px 4px 1px 0px rgba(137,137,137,0.75);
-    border-width: 0.5vh;
+    box-shadow: 0.3vh 0.5vh 4px -0.1vh rgba(38, 37, 37, 0.3);
+    /* border-width: 0.5vh;
     border-style: solid;
     border-right-style: none;
-    border-color: #979797;
+    border-color: #979797; */
 }
 
 .navIcon{

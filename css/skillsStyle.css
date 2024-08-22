@@ -325,7 +325,7 @@
     }
 }
 
-#aboutMeOverview {
+#aboutMeOverview { /* Javascript */
     top: 7vh;
     left: 48%;
     height: 3vh;
@@ -345,7 +345,7 @@
     transition-delay: 0s, 0s, 0s,0s; 
 }
 
-#aboutMeGoals{
+#aboutMeGoals{ /* C# */
     top:35vh;
     left:28%;
     background-color: #86a5d4;
@@ -358,15 +358,15 @@
 
 #aboutMeGoals:hover{
     width: 26vw;
-    height: 16vh;
+    height: 17vh;
     background-color: #99b8e6;
     top:29.5vh;
     z-index: 3;
     transition-delay: 0s, 0s, 0s; 
 }
 
-
-#aboutMeInterests{
+ 
+#aboutMeInterests{ /* Unity */
     top:40vh;
     left:60%;
     background-color: #86a5d4;
@@ -387,7 +387,7 @@
     transition-delay: 0s, 0s, 0s,0s; 
 }
 
-#aboutMeValues{
+#aboutMeValues{ /* Figma */
     top:61vh;
     left:38%;
     height: 3vh;
@@ -400,14 +400,14 @@
 
 #aboutMeValues:hover{
     width: 26vw;
-    height: 16vh;
+    height: 17vh;
     top:53vh;
     background-color: #99b8e6;
     z-index: 3;
     transition-delay: 0s, 0s, 0s, 0s; 
 }
 
-#aboutMeExperience{
+#aboutMeExperience{ /* Java */
     top:80vh;
     left:43%;
     height: 3vh;
@@ -427,7 +427,7 @@
     transition-delay: 0s, 0s, 0s; 
 }
 
-#aboutMeTop5{
+#aboutMeTop5{ /* CSS */
     top:68vh;
     left:66%;
     background-color: #86a5d4;

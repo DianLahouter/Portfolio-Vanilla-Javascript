@@ -154,19 +154,21 @@ body::-webkit-scrollbar-thumb {
     border-color: #5e7ca9; */
 }
 
-.descriptionText {
-    color: rgb(25, 25, 25);
-    font-size: calc(0.4vw + 0.55vh);
-    line-height: 1.7em;
-    word-spacing: 0.3em;
-    display: none;
-    letter-spacing: 0.01em;
-} 
+.aboutMeDescription:hover .descriptionText{
+    animation: fadeIn 0.05s 0.2s forwards;
+}
 
 .descriptionText {
-    opacity: 0; 
-    animation: fadeIn 0.2s ease forwards;
-}
+    color: rgb(41, 41, 41);
+    font-size: calc(0.42vw + 0.57vh);
+    line-height: 1.7em;
+    word-spacing: 0.3em;
+    opacity: 0;
+    /* transition-delay: 1s;
+    transition: opacity 0.2s; */
+    letter-spacing: 0.01em;
+    font-weight: 700;
+} 
 
 @keyframes fadeIn {
     0% {
@@ -214,9 +216,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 #aboutMeOverview:hover {
-    left: 38vw;
+    left: 37vw;
     width: 24vw;
-    height: 25vh;
+    height: 22vh;
     top:1vh;
     background-color: #99b8e6;
     transition-delay: 0s, 0s, 0s,0s; 
@@ -233,10 +235,10 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeGoals:hover{
     width: 26vw;
-    height: 16vh;
+    height: 23vh;
     left:9vw;
     background-color: #99b8e6;
-    top:29.5vh;
+    top:25.5vh;
     z-index: 3;
     transition-delay: 0s, 0s, 0s; 
 }
@@ -253,10 +255,10 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeInterests:hover{
     width: 23vw;
-    right: 9vw;
-    top:33vh;
+    right: 12vw;
+    top:29vh;
     background-color: #99b8e6;
-    height: 20vh;
+    height: 21vh;
     z-index: 3;
     transition-delay: 0s, 0s, 0s,0s; 
 }
@@ -272,8 +274,8 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeValues:hover{
     width: 26vw;
-    height: 16vh;
-    top:53vh;
+    height: 21vh;
+    top:50vh;
     left: 9vw;
     background-color: #99b8e6;
     z-index: 3;
@@ -309,10 +311,10 @@ body::-webkit-scrollbar-thumb {
 
 #aboutMeTop5:hover{
     width: 23vw;
-    top:61vh;
-    right:9vw;
+    top:50vh;
+    right:12vw;
     background-color: #99b8e6;
-    height: 20vh;
+    height: 26vh;
     z-index: 3;
     transition-delay: 0s, 0s, 0s; 
 }

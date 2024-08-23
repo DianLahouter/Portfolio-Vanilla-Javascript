@@ -170,7 +170,7 @@ function setFlag(){
 
 logoutButton.addEventListener('mouseup', function(event) {
     setTimeout(() => {
-        window.location.href = "./Landing.html";
+        window.location.href = "./index.html";
     }, 330);
 
     var element = document.getElementById('rightTransitionObject');

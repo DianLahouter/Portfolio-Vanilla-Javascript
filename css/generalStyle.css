@@ -207,14 +207,26 @@ body {
 
 }
 
+#hoverTrigger{
+    background-color: transparent;
+    position: fixed;
+    top: -2vh;
+    right: 0vw;
+    width: 15vw;
+    height: 12vh;
+    z-index: 0;
+}
+
 #emailTag{
+    width: 15vw;
+    z-index: 2;
     position: fixed;
     font-family: Joystix;
-    top:0vh;
+    top:-3vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    right:4vw;
+    right:1vw;
     height: 6vh;
     background-color: snow;
     border-bottom-left-radius: 2vh;
@@ -223,24 +235,63 @@ body {
     padding: 0vh;
     padding-right: 0;
     padding-left: 1vw;
+    box-shadow: 0.3vh 0.5vh 4px -0.1vh rgba(38, 37, 37, 0.3);
+    transition: top 0.2s ease;
 }
 
+#hoverTrigger:hover #emailTag{
+    top: 0vh;
+}
+
+#hoverTrigger:hover #clipboardCopyButton{
+    top: 0vh;
+    display:flex;
+} 
+
+#hoverTrigger:hover #emailTagName{
+    display:block;
+} 
+
 #clipboardCopyButton{
+    display: none;
     background-color: #848484;
     padding: 0px;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     margin-left: 1vw;
     height: 100%;
     width: 3vw;
     border-bottom-right-radius: 2vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    transition: box-shadow 0.1s ease; 
+}
+
+#clipboardCopyButton:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+#clipboardCopyButton:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #clipboardCopyImage{
     height: 4vh;
 }
 
-/* #emailTagName{
-    margin-left: 3vw;
-} */
+#emailTagName{
+    display: none;
+    font-family: Joystix;
+    font-weight: 300;
+    font-size: 0.7em;
+} 
+
+#hoverTrigger{
+    background-color: transparent;
+    position: fixed;
+    top: 0vh;
+    right: 0vw;
+    width: 15vw;
+    height: 10vh;
+    z-index: 0;
+}

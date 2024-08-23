@@ -118,6 +118,7 @@
 }
 
 #leftTransitionObject{
+    z-index: 5;
     position: fixed;
     height: 50vh;
     width: 100vw;
@@ -128,6 +129,7 @@
 }
 
 #rightTransitionObject{
+    z-index: 5;
     position: fixed;
     height: 50vh;
     top:50vh;

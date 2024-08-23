@@ -1,4 +1,4 @@
-var buttons = document.querySelectorAll(".button");
+var buttons = document.querySelectorAll(".button, #clipboardCopyButton");
 var logoutButton = document.getElementById("logoutButton");
 var navigatorIcons = document.querySelectorAll(".navIcon");
 var cursor = document.querySelector(".cursor");
@@ -209,3 +209,14 @@ function flickerRandomLetter(wordElement, maxTimeBetweenTurnOff = 3000, minTimeB
 function turnLettersBackOn(wordElement, cleanInnerHtml){
     wordElement.innerHTML = cleanInnerHtml;
 }
+
+var clipboardButton = document.getElementById("clipboardCopyButton");
+
+clipboardButton.addEventListener("click", function() {
+    var email = "lahouterd@gmail.com";
+    navigator.clipboard.writeText(email).then(function() {
+        console.log("Email copied to clipboard!");
+    }).catch(function(error) {
+        console.error("Failed to copy text: ", error);
+    });
+});
